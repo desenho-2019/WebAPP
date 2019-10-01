@@ -1,10 +1,10 @@
-.ads-list {
+.listads {
     max-width: 700px;
     margin: 20px auto 0;
     padding: 0 20px;
 }
 
-.ads-list article {
+.listads article {
     background: #FFF;
     border: 1px solid #DDD;
     border-radius: 5px;
@@ -12,9 +12,9 @@
     margin-bottom: 20px;
 }
 
-.ads-list article h2, h3{
+.listads article h2{
     font-size: 16px;
-    color: #FFF;
+    color: #999;
     margin-top: 5px;
     line-height: 24px;
 }
