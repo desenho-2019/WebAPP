@@ -10,12 +10,6 @@ header#main-header {
     align-items: center;
 }
 
-div#login-container {
-}
-
-a#title {
-}
-
 button#login-button {
     font-size: 100%;
 }
