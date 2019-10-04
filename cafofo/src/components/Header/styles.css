@@ -6,6 +6,16 @@ header#main-header {
     font-weight: bold;
     color: #FFF;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+}
+
+div#login-container {
+}
+
+a#title {
+}
+
+button#login-button {
+    font-size: 100%;
 }
