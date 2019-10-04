@@ -7,14 +7,17 @@ import { Link } from 'react-router-dom';
 
 const Header = () =>
     <header id='main-header'>
-        <div id='logo-container'>
-            Logo
-        </div>
+        <img src="" alt=""></img>
         <a id='title'>
             <Link to={'/'}>Cafofo</Link>
         </a>
-        <div id='login-container'>
-            <Link to={'/login'}>Login</Link>
+        <div id='buttons-header'>
+            <div id='signup-container'>
+                <Link to={'/cadastrar'}>Cadastrar</Link>
+            </div>
+            <div id='login-container'>
+                <Link to={'/login'}>Login</Link>
+            </div>
         </div>
     </header>
 

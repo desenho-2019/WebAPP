@@ -1,20 +1,18 @@
-.listads {
-    max-width: 700px;
-    margin: 20px auto 0;
-    padding: 0 20px;
+.mainpage {
+    background-size: auto;
+    background: url("cafofoback.jpg") no-repeat center center fixed;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    height: 100%;
+    width: 100%;
+    position:fixed;
 }
 
-.listads article {
-    background: #FFF;
-    border: 1px solid #DDD;
-    border-radius: 5px;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-.listads article h2{
-    font-size: 16px;
-    color: #999;
-    margin-top: 5px;
-    line-height: 24px;
+#shadowimage {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(0,0,0,0.3);
 }
