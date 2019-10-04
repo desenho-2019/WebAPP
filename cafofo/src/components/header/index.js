@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import Login from '../../pages/login/index'
+import Login from '../../pages/login/index';
 import './styles.css';
 
+import { Link } from 'react-router-dom';
 
 
 const Header = () =>
@@ -10,10 +11,10 @@ const Header = () =>
             Logo
         </div>
         <a id='title'>
-            Cafofo
+            <Link to={'/'}>Cafofo</Link>
         </a>
         <div id='login-container'>
-            <a id='login-button' href={<Login/>} >Entrar</a>
+            <Link to={'/login'}>Login</Link>
         </div>
     </header>
 

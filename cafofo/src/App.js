@@ -1,17 +1,28 @@
-import React from "react";
-import Routes from './routes';
-
-import Header from './components/Header';
+import React, { Component } from "react";
+import { Switch, Route } from 'react-router-dom';
+import Header from './components/header';
+import Login from './pages/login';
+import Main from './pages/main';
+import Adsinfo from './pages/adsinfo';
 
 import './styles.css';
 
-function App() {
-  return (
-    <div className="App">
-      <Header />
-      <Routes />
-    </div>
-  );
+class App extends Component {
+  render(){
+    return (
+      <div>
+        <Header />
+        <div className="App">
+          <Switch>
+              <Route exact path="/" component={Main} />
+              <Route path="/cafofos/:id" component={Adsinfo} />
+              <Route path="/login" component={Login} />
+          </Switch>
+        </div>
+      </div>
+    );
+
+  }
 }
 
 export default App;
