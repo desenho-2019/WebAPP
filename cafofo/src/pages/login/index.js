@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import { Button, FormGroup, FormControl, FormLabel, Form } from "react-bootstrap";
-import "./styles.css";
+import { Button, FormGroup, FormControl, FormLabel} from "react-bootstrap";
+import { Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+import { Form, Container } from "./styles";
 
 export default class Login extends Component {
     constructor(props) {
@@ -29,36 +31,25 @@ export default class Login extends Component {
 
     render() {
         return (
-            <div id="login-container">
-                <Form onSubmit={this.handleSubmit} id="login-form">
-                    <FormGroup controlId="email">
-                        <FormLabel>Email</FormLabel>
-                        <FormControl
-                            autoFocus
-                            placeholder="Digite o seu email"
-                            type="email"
-                            value={this.state.email}
-                            onChange={this.handleChange}
-                        />
-                    </FormGroup>
-                    <FormGroup controlId="password">
-                        <FormLabel>Senha</FormLabel>
-                        <FormControl
-                            placeholder="Senha"
-                            value={this.state.password}
-                            onChange={this.handleChange}
-                            type="password"
-                        />
-                    </FormGroup>
-                    <Button
-                        variant="primary"
-                        disabled={!this.validateForm()}
-                        type="submit"
-                    >
-                        Login
-                    </Button>
+            <Container>
+                <Form onSubmit={this.handleSubmit}>
+                <h1>Acesse a sua conta</h1>
+                <input
+                    type="email"
+                    placeholder="Endereço de e-mail"
+                    onChange={e => this.setState({ email: e.target.value })}
+                />
+                <input
+                    type="password"
+                    placeholder="Senha"
+                    onChange={e => this.setState({ password: e.target.value })}
+                />
+                <Link to="/adsinfo">Esqueceu sua senha?</Link>
+                <button type="submit">Entrar</button>
+                <hr />
+                <Link to="/adsinfo">Cadastre-se</Link>
                 </Form>
-            </div>
+            </Container>
         );
     }
 }
