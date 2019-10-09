@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Button, FormGroup, FormControl, FormLabel} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -44,10 +43,10 @@ export default class Login extends Component {
                     placeholder="Senha"
                     onChange={e => this.setState({ password: e.target.value })}
                 />
-                <Link to="/adsinfo">Esqueceu sua senha?</Link>
+                <Link to="/esqueci-a-senha">Esqueceu sua senha?</Link>
                 <button type="submit">Entrar</button>
                 <hr />
-                <Link to="/adsinfo">Cadastre-se</Link>
+                <Link to="/cadastro">Cadastre-se</Link>
                 </Form>
             </Container>
         );
