@@ -6,6 +6,7 @@ import Main from './pages/main';
 import Adsinfo from './pages/adsinfo';
 import UserRegister from './pages/userRegister'
 import ForgotPassword from './pages/forgotPassword'
+import userProfile from './pages/userProfile'
 
 import './styles.css';
 
@@ -21,6 +22,7 @@ class App extends Component {
               <Route path="/login" component={Login} />
               <Route path="/cadastro" component={UserRegister} />
               <Route path="/esqueci-a-senha" component={ForgotPassword} />
+              <Route path="/perfil" component={userProfile} />
           </Switch>
         </div>
       </div>

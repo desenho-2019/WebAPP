@@ -44,7 +44,9 @@ export default class Login extends Component {
                     onChange={e => this.setState({ password: e.target.value })}
                 />
                 <Link to="/esqueci-a-senha">Esqueceu sua senha?</Link>
-                <button type="submit">Entrar</button>
+                <Link to="/perfil">
+                    <button type="submit">Entrar</button>
+                </Link>
                 <hr />
                 <Link to="/cadastro">Cadastre-se</Link>
                 </Form>
