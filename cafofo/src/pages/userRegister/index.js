@@ -59,15 +59,18 @@ export default class userRegister extends Component {
                     type="text"
                     placeholder="Nome completo"
                     onChange={e => this.setState({ nome: e.target.value })}
+                    required
                 />
                 <input
                     type="email"
                     placeholder="Endereço de e-mail"
                     onChange={e => this.setState({ email: e.target.value })}
+                    required
                 />
                 <select 
                     type="select"
-                    onChange={e => this.setState({ genero: e.target.value })}>
+                    onChange={e => this.setState({ genero: e.target.value })}
+                    required>
                     <option>Selecione</option>
                     <option>Masculino</option>
                     <option>Feminino</option>
@@ -77,6 +80,7 @@ export default class userRegister extends Component {
                     type="date"
                     placeholder="Data de nascimento"
                     onChange={e => this.setState({ nascimento: e.target.value })}
+                    required
                 />
                 </div>
                 <div className="grid-container">
@@ -84,6 +88,7 @@ export default class userRegister extends Component {
                     type="phone"
                     placeholder="Telefone"
                     onChange={e => this.setState({ telefone: e.target.value })}
+                    required
                 />
                 <input 
                     id="file"
@@ -95,16 +100,19 @@ export default class userRegister extends Component {
                     type="text"
                     placeholder="Nacionalidade"
                     onChange={e => this.setState({ nacionalidade: e.target.value })}
+                    required
                 />
                 <input
                     type="password"
                     placeholder="Digite uma Senha"
                     onChange={e => this.setState({ password: e.target.value })}
+                    required
                 />
                 <input
                     type="password"
                     placeholder="Confirme sua Senha"
                     onChange={e => this.setState({ confirmPassword: e.target.value })}
+                    required
                 />
                 </div>
                 <button type="submit">Cadastrar</button>
