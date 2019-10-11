@@ -15,7 +15,7 @@ export default class userRegister extends Component {
             nascimento: "",
             celular: "",
             foto: "",
-            redesSociais: [],
+            facebook: "",
             nacionalidade: "",
             email: "",
             password: "",
@@ -82,6 +82,11 @@ export default class userRegister extends Component {
                 onChange={e => this.setState({ telefone: e.target.value })}
                 required
                 />
+                <input
+                    type="text"
+                    placeholder="Facebook"
+                    onChange={e => this.setState({ facebook: e.target.value })}
+                />
                 </div>
                 <div className="grid-container">
                 <input
@@ -94,7 +99,6 @@ export default class userRegister extends Component {
                     type="text"
                     placeholder="Nacionalidade"
                     onChange={e => this.setState({ nacionalidade: e.target.value })}
-                    required
                 />
                 <input
                 type="email"

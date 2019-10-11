@@ -61,16 +61,17 @@ export const Form = styled.form`
     padding-top: 8px; 
   }
   button {
-    color: #fff;
+    color: #fa6900;
     font-size: 16px;
-    background: #fa6900;
+    background-color: #fff;
     height: 56px;
-    border: 0;
+    border: 2px solid #fa6900;
     border-radius: 5px;
     width: 100%;
   }
   button:hover {
-    opacity: 0.9;
+    color: #fff;
+    background: #fa6900;
     transition-delay: 0.1s;
     transform: scale(1.002);
   }
