@@ -11,13 +11,13 @@ export default class userRegister extends Component {
 
         this.state = {
             nome: "",
-            email: "",
             genero: "",
             nascimento: "",
             celular: "",
             foto: "",
             redesSociais: [],
             nacionalidade: "",
+            email: "",
             password: "",
             confirmPassword:""
         };
@@ -39,7 +39,7 @@ export default class userRegister extends Component {
           this.setState({confirmPassword: event.target.value})
         }
     }
-    
+
     handleSubmit = (event) => {
         if(this.state.password !== this.state.confirmPassword){
             alert("Confirmação de senha incorreta");
@@ -54,20 +54,14 @@ export default class userRegister extends Component {
             <Container>
                 <Form onSubmit={this.handleSubmit}>
                 <h1>Cadastre-se</h1>
-                <div className="grid-container"> 
+                <div className="grid-container">
                 <input
                     type="text"
                     placeholder="Nome completo"
                     onChange={e => this.setState({ nome: e.target.value })}
                     required
                 />
-                <input
-                    type="email"
-                    placeholder="Endereço de e-mail"
-                    onChange={e => this.setState({ email: e.target.value })}
-                    required
-                />
-                <select 
+                <select
                     type="select"
                     onChange={e => this.setState({ genero: e.target.value })}
                     required>
@@ -82,15 +76,15 @@ export default class userRegister extends Component {
                     onChange={e => this.setState({ nascimento: e.target.value })}
                     required
                 />
+                <input
+                type="phone"
+                placeholder="Telefone"
+                onChange={e => this.setState({ telefone: e.target.value })}
+                required
+                />
                 </div>
                 <div className="grid-container">
                 <input
-                    type="phone"
-                    placeholder="Telefone"
-                    onChange={e => this.setState({ telefone: e.target.value })}
-                    required
-                />
-                <input 
                     id="file"
                     type="file"
                     placeholder="Foto de perfil"
@@ -101,6 +95,12 @@ export default class userRegister extends Component {
                     placeholder="Nacionalidade"
                     onChange={e => this.setState({ nacionalidade: e.target.value })}
                     required
+                />
+                <input
+                type="email"
+                placeholder="Endereço de e-mail"
+                onChange={e => this.setState({ email: e.target.value })}
+                required
                 />
                 <input
                     type="password"
