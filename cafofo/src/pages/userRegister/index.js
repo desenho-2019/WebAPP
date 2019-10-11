@@ -18,7 +18,8 @@ export default class userRegister extends Component {
             foto: "",
             redesSociais: [],
             nacionalidade: "",
-            password: ""
+            password: "",
+            confirmPassword:""
         };
     }
 
@@ -32,8 +33,20 @@ export default class userRegister extends Component {
         });
     }
 
-    handleSubmit = event => {
-        event.preventDefault();
+    handleConfirmPassword = (event) => {
+        if (event.target.value !== this.state.password) {
+            alert("Confirmação de senha incorreta");
+          this.setState({confirmPassword: event.target.value})
+        }
+    }
+    
+    handleSubmit = (event) => {
+        if(this.state.password !== this.state.confirmPassword){
+            alert("Confirmação de senha incorreta");
+        }
+        else {
+            event.preventDefault();
+        ;}
     }
 
     render() {
@@ -41,6 +54,7 @@ export default class userRegister extends Component {
             <Container>
                 <Form onSubmit={this.handleSubmit}>
                 <h1>Cadastre-se</h1>
+                <div className="grid-container"> 
                 <input
                     type="text"
                     placeholder="Nome completo"
@@ -51,21 +65,28 @@ export default class userRegister extends Component {
                     placeholder="Endereço de e-mail"
                     onChange={e => this.setState({ email: e.target.value })}
                 />
-                <ToggleButtonGroup type="checkbox">
-                    <ToggleButton>Masculino</ToggleButton>
-                    <ToggleButton>Feminino</ToggleButton>
-                </ToggleButtonGroup>
+                <select 
+                    type="select"
+                    onChange={e => this.setState({ genero: e.target.value })}>
+                    <option>Selecione</option>
+                    <option>Masculino</option>
+                    <option>Feminino</option>
+                    <option>Outro</option>
+                </select>
                 <input
                     type="date"
                     placeholder="Data de nascimento"
                     onChange={e => this.setState({ nascimento: e.target.value })}
                 />
+                </div>
+                <div className="grid-container">
                 <input
                     type="phone"
                     placeholder="Telefone"
                     onChange={e => this.setState({ telefone: e.target.value })}
                 />
-                <input
+                <input 
+                    id="file"
                     type="file"
                     placeholder="Foto de perfil"
                     onChange={e => this.setState({ foto: e.target.value })}
@@ -77,9 +98,15 @@ export default class userRegister extends Component {
                 />
                 <input
                     type="password"
-                    placeholder="Senha"
+                    placeholder="Digite uma Senha"
                     onChange={e => this.setState({ password: e.target.value })}
                 />
+                <input
+                    type="password"
+                    placeholder="Confirme sua Senha"
+                    onChange={e => this.setState({ confirmPassword: e.target.value })}
+                />
+                </div>
                 <button type="submit">Cadastrar</button>
                 <hr />
                 <Link to="/login">Já possui conta? Faça Login</Link>
