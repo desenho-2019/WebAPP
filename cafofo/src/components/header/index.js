@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
-import { Nav, Navbar } from 'react-bootstrap'
+import { Nav, Navbar, Container } from 'react-bootstrap';
 import './styles.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
 
 
 const Header = () =>
-<Navbar bg="light" expand="lg">
-<Navbar.Brand href="/">
+
+<Navbar className="navbar navbar-light" bg="light" expand="lg">
+<Navbar.Brand href="/" id="brand-icon">
       <img
         alt=""
         src="/cafofo_favicon.png"
@@ -15,27 +16,16 @@ const Header = () =>
         height="25"
         className="d-inline-block align-top"
       />
-      {'Cafofo'}
+      {' Cafofo'}
 </Navbar.Brand>
 <Navbar.Toggle aria-controls="basic-navbar-nav" />
-<Navbar.Collapse id="basic-navbar-nav">
-  <Nav className="mr-auto">
-    <Nav.Link href="/login">Login</Nav.Link>
-    <Nav.Link href="/cadastro">Cadastro</Nav.Link>
+<Navbar.Collapse id="justify-content-end">
+  <Nav className="ml-auto">
+    <Nav.Link className="button-header" href="/login">LOGIN</Nav.Link>
+    <Nav.Link className="button-header" href="/cadastro">CADASTRO</Nav.Link>
+    <Nav.Link className="button-active" href="/cadastro">ANUNCIE UM CAFOFO</Nav.Link>
   </Nav>
 </Navbar.Collapse>
 </Navbar>
-
-{/* <header id='main-header'>
-    <div id='logo-container'>
-        Logo
-    </div>
-    <a id='title'>
-        <Link to={'/'}>Cafofo</Link>
-    </a>
-    <div id='login-container'>
-        <Link to={'/login'}>Login</Link>
-    </div>
-</header> */}
 
 export default Header;
