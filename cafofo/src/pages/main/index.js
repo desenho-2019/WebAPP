@@ -10,8 +10,16 @@ export default class Main extends Component {
         return (
             <div className='mainpage'>
               <div id='shadowimage'>
+              <form>
+              <div className='center'>
+              <p>ENCONTRE O CAFOFO IDEAL PARA DIVIDIR! </p>
+              <input type="text" name="search" placeholder="Onde você deseja morar?">
+              </input>
+              <button class="button">BUSCAR</button>
+              </div>
+              </form>
               </div>
             </div>
-        )   
+        )
     }
 }
