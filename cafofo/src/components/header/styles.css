@@ -18,13 +18,11 @@
     font-family: 'Trebuchet MS', Arial, sans-serif;
     font-weight: bold;
     font-size: 14px;
-    border-radius: 5px;
     padding: 12px !important;
     margin: 10px;
   }
 .button-header:hover {
-    color: white !important;
-    background: #fa6900;
+    color: #ff9e59 !important;
     transition-duration: 0.3s;
     transform: scale(1.002);
   }
@@ -40,7 +38,7 @@
 }
 .button-active:hover {
     opacity: 0.8;
-    transition-duration: 0.3s;
+    transition-duration: 0.2s;
     transform: scale(1.002);
 }
 

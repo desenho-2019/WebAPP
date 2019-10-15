@@ -49,7 +49,7 @@
 
   input {
     width: 50%;
-    height: 50px;
+    height: 60px;
     font-size: 20px;
     box-sizing: border-box;
   }
@@ -58,5 +58,57 @@
     height: 100%;
     width: 100%;
     position: absolute;
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0,0,0,0.8);
   }
+
+  #location-insert{
+    border-radius: 20px 0 0 20px;
+    padding: 25px;
+  }
+
+  .button#search-button{
+    border-radius: 0 20px 20px 0; 
+    border-color: #0099B0;
+    border-style: 1 solid;
+    height: 62px;
+  }
+
+  .button#search-button:hover{
+    background: rgb(1, 117, 134);
+    opacity: 1;
+  }
+
+  .center input[type=text] {
+    border: none;
+    margin-top: 8px;
+    font-size: 17px;
+  }
+
+/* Global */
+
+.line-1{
+    position: relative;
+    top: 50%;  
+    width: 24em;
+    margin: 0 auto;
+    border-right: 2px solid rgba(255,255,255,.75);
+    font-size: 80%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);    
+}
+
+/* Animation */
+.anim-typewriter{
+  animation: typewriter 3s steps(44) 1s 1 normal both,
+             blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 22em;}
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: rgba(255,255,255,.75);}
+  to{border-right-color: transparent;}
+}

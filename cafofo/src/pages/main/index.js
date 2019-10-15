@@ -10,14 +10,14 @@ export default class Main extends Component {
         return (
             <div className='mainpage'>
               <div id='shadowimage'>
-              <form>
-              <div className='center'>
-              <p>ENCONTRE O CAFOFO IDEAL PARA DIVIDIR! </p>
-              <input type="text" name="search" placeholder="Onde você deseja morar?">
-              </input>
-              <button class="button">BUSCAR</button>
-              </div>
-              </form>
+                <form>
+                    <div className='center'>
+                        <p className="line-1 anim-typewriter">ENCONTRE O CAFOFO IDEAL PARA DIVIDIR!</p>
+                        <input id="location-insert" type="text" name="search" placeholder="Onde você deseja morar?">
+                        </input>
+                        <button className="button" id="search-button"><i class="fa fa-search"></i></button>
+                    </div>
+                </form>
               </div>
             </div>
         )
