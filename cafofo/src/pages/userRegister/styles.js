@@ -72,7 +72,7 @@ export const Form = styled.form`
   button:hover {
     color: #fff;
     background: #fa6900;
-    transition-delay: 0.1s;
+    transition-duration: 0.3s;
     transform: scale(1.002);
   }
   hr {
