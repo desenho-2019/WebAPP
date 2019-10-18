@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { ToggleButtonGroup, ToggleButton } from 'react-bootstrap'
 
 import { Form, Container } from "./styles";
 
