@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ButtonFactory from '../../factory/button/index';
 
 import { Form, Container } from "./styles";
 
@@ -43,6 +44,7 @@ export default class Login extends Component {
                     placeholder="Senha"
                     onChange={e => this.setState({ password: e.target.value })}
                 />
+                {ButtonFactory.factoryMethod('facebook')}
                 <Link to="/esqueci-a-senha">Esqueceu sua senha?</Link>
                 <button type="submit">Entrar</button>
                 <hr />
