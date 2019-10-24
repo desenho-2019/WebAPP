@@ -39,10 +39,12 @@ export const Form = styled.form`
     border: 0;
     border-radius: 5px;
     width: 100%;
+    margin: 10px;
   }
   hr {
-    margin: 20px 0;
-    border: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 1;
     border-bottom: 1px solid #cdcdcd;
     width: 100%;
   }

@@ -44,9 +44,11 @@ export default class Login extends Component {
                     placeholder="Senha"
                     onChange={e => this.setState({ password: e.target.value })}
                 />
-                {ButtonFactory.factoryMethod('facebook')}
                 <Link to="/esqueci-a-senha">Esqueceu sua senha?</Link>
-                <button type="submit">Entrar</button>
+                {ButtonFactory.factoryMethod('email')}
+                {ButtonFactory.factoryMethod('facebook')}
+                {ButtonFactory.factoryMethod('google')}
+
                 <hr />
                 <Link to="/cadastro">Cadastre-se</Link>
                 </Form>
