@@ -4,29 +4,26 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 50vh;
+  height: 50%;
+  background-image: linear-gradient(to right,#0099B0, #A7DBD7);
 `;
 
 export const Form = styled.form`
 
-  width: 1100px;
+  width: 700px;
   background: #fff;
   padding: 20px;
   display: table;
-  margin-top: 25%;
+  margin-top: 3%;
   margin-bottom: 50px;
   flex-direction: column;
   overflow: hidden;
   align-items: center;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 4px;
+  /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
   img {
     width: 100px;
     margin: 10px 0 40px;
-  }
-  .grid-container {
-    float: left;
-    width: 50%;
-    padding: 20px;
   }
   input {
     display: flex;
@@ -40,6 +37,8 @@ export const Form = styled.form`
     &::placeholder {
       color: #999;
     }
+    border-radius: 3px;
+    
   }
   input:focus {
     border: 1px solid #0099B0;
@@ -77,9 +76,10 @@ export const Form = styled.form`
   }
   hr {
     margin: 20px 0;
-    border: none;
+    margin-left: 40%;
+    border-color: #0099B0;
     border-bottom: 1px solid #cdcdcd;
-    width: 100%;
+    width: 20%;
   }
   a {
     font-size: 16px;
@@ -94,9 +94,10 @@ export const Form = styled.form`
     color: #0099B0;
   }
   h1 {
-    font-size: 28px;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
     font-weight: bold;
     margin-bottom: 5px;
     text-align: center;
+    color: #0099B0;
   }
 `

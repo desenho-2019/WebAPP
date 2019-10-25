@@ -1,7 +1,7 @@
 .mainpage {
     animation-duration: 4s;
     background-size: auto;
-    background: url("cafofoback.jpg") no-repeat center center fixed;
+    background: url("../../assets/cafofoback.jpg") no-repeat center center fixed;
     background-repeat: no-repeat;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -44,7 +44,7 @@
     font-family: 'Trebuchet MS', Arial, sans-serif;
     font-weight: bold;
     font-size: 30px;
-    color: #E0E4CD;
+    color: white;
   }
 
   input {
@@ -58,12 +58,13 @@
     height: 100%;
     width: 100%;
     position: absolute;
-    background-color: rgba(0,0,0,0.8);
+    background-image: linear-gradient(to right, rgba(1, 118, 136, 0.8), rgba(0,153,176,0.8));
   }
 
   #location-insert{
     border-radius: 20px 0 0 20px;
     padding: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
   .button#search-button{
@@ -71,6 +72,7 @@
     border-color: #0099B0;
     border-style: 1 solid;
     height: 62px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
   .button#search-button:hover{

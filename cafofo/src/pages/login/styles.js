@@ -4,16 +4,20 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80vh;
+  height: 100%;
+  background-image: linear-gradient(to right,#0099B0, #A7DBD7);
 `;
 
 export const Form = styled.form`
   width: 400px;
   background: #fff;
   padding: 20px;
+  margin: 4%;
+  margin-top: 4%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-radius: 4px;
   img {
     width: 100px;
     margin: 10px 0 40px;
