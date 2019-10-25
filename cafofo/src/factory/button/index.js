@@ -21,7 +21,7 @@ class ButtonFactory {
             case 'email':
                 return <Button
                     icon={email}
-                    text={"Entrar"}
+                    text={"Entrar com email"}
                     backColor={'#fa6900'}
                     type={"submit"}
                 />

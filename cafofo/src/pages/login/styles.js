@@ -11,7 +11,7 @@ export const Container = styled.div`
 export const Form = styled.form`
   width: 400px;
   background: #fff;
-  padding: 20px;
+  padding: 30px;
   margin: 4%;
   margin-top: 4%;
   display: flex;
@@ -35,6 +35,9 @@ export const Form = styled.form`
       color: #999;
     }
   }
+  input:focus {
+    border: 1px solid #0099B0;
+  }
   button {
     color: #fff;
     font-size: 16px;
@@ -45,10 +48,17 @@ export const Form = styled.form`
     width: 100%;
     margin: 10px;
   }
+  button:hover {
+    color: #fff;
+    background-color: #f38633;
+    transition-duration: 0.3s;
+    transform: scale(1.002);
+    border-color: #f38633;
+  }
   hr {
     margin-top: 20px;
     margin-bottom: 20px;
-    border: 1;
+    border-color: #0099B0;
     border-bottom: 1px solid #cdcdcd;
     width: 100%;
   }
@@ -59,9 +69,19 @@ export const Form = styled.form`
     text-decoration: none;
     margin-bottom: 10px; 
   }
+  a:hover {
+    color: #0099B0;
+  }
   h1 {
-    font-size: 28px;
+    font-size: 26px;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
     font-weight: bold;
-    margin-bottom: 40px; 
+    margin-bottom: 20px;
+    text-align: center;
+    color: #0099B0;
+  }
+  #button-factory {
+    margin-bottom: 30px;
+    margin-right: 20px;
   }
 `

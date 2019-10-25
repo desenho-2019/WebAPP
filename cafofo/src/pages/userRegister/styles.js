@@ -60,26 +60,29 @@ export const Form = styled.form`
     padding-top: 8px; 
   }
   button {
-    color: #fa6900;
+    color: #FFF;
+    font-weight: bold;
     font-size: 16px;
-    background-color: #fff;
+    background-color: #fa6900;
     height: 56px;
     border: 2px solid #fa6900;
     border-radius: 5px;
-    width: 100%;
+    width: 30%;
+    margin-left: 70%;
+    
   }
   button:hover {
     color: #fff;
-    background: #fa6900;
+    background-color: #f38633;
     transition-duration: 0.3s;
     transform: scale(1.002);
+    border-color: #f38633;
   }
   hr {
     margin: 20px 0;
-    margin-left: 40%;
     border-color: #0099B0;
     border-bottom: 1px solid #cdcdcd;
-    width: 20%;
+    width: 100%;
   }
   a {
     font-size: 16px;
@@ -88,7 +91,7 @@ export const Form = styled.form`
     text-decoration: none;
     margin-bottom: 10px; 
     text-align: center;
-    float: right;
+    margin-left: 33%;
   }
   a:hover {
     color: #0099B0;
