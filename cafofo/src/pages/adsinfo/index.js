@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
-import api from '../../services/api'
+import React, { Component, Fragment }  from 'react';
+import api from '../../services/api';
+import { Slider } from './slider';
 
 import './styles.css';
 
@@ -16,19 +17,27 @@ export default class Adsinfo extends Component {
          this.setState({ cafofoAds: response.data });
  
      }
-    
+
      render() {
          const { cafofoAds } = this.state;
          
          return (
-             <div className="info-cafofo">
-                 <h1>{cafofoAds.title}</h1>
-                 <p>{cafofoAds.price}</p>
- 
-                 <p>
-                     Localização: <a href={cafofoAds.location}>{cafofoAds.location}</a>
-                 </p>
+             <React.Fragment>
+             <Slider />
+             <div className='info-cafofo' >
+                <h1>Nome do Anúncio</h1>
+                <p>Detalhes sobre ele, falando sobre tudo, como acomodações, quantas pessoas moram...</p>
+                <br />
+                <br />
+                <p>Outros detalhes</p>
+                <br />
+                <br />
+                <p>E mais outros</p>
+                <br />
+                <br />
+                <p>Varios</p>
              </div>
+             </React.Fragment>
          )
      }
 }
