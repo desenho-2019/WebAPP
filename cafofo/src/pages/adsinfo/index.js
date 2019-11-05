@@ -12,7 +12,7 @@ export default class Adsinfo extends Component {
     async componentDidMount() {
         const { id } = this.props.match.params;
  
-         const response = await api.get('/cafofos/${id}');
+         const response = await api.get(`/cafofos/${id}`);
  
          this.setState({ cafofoAds: response.data });
  
@@ -25,7 +25,7 @@ export default class Adsinfo extends Component {
              <React.Fragment>
              <Slider />
              <div className='info-cafofo' >
-                <h1>Nome do Anúncio</h1>
+                <h1>Nome do Anúncio{cafofoAds.title}</h1>
                 <p>Detalhes sobre ele, falando sobre tudo, como acomodações, quantas pessoas moram...</p>
                 <br />
                 <br />

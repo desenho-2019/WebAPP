@@ -8,19 +8,35 @@ export default class Adslist extends Component {
     state = {
         cafofoAds: []
     };
-    
+
     //Executa a ação quando o elemento já é renderizado na tela
     componentDidMount() {
         this.loadAds();
     }
 
     loadAds = async () => {
-        const response = await api.get('/ads');
-    
-        this.setState({ cafofoAds: response.data })
+        await api.get('/ads')
+            .then(res => {
+                const cafofoAds = res.data;
+                this.setState({ cafofoAds });
+            })
+
+        //this.setState({ cafofoAds: response.data })
         //.data.docs serve para ler as datas dentro das requisições de Docs 
         // Mudar de acordo com o banco de dados, junto com o BASEURL em api.js
     };
+
+    isAvailable = (status) => {
+        if (status == true) {
+            return (
+                <h3>Disponível</h3>
+            )
+        } else {
+            return (
+                <a>Indisponível </a>
+            )
+        }
+    }
 
     render() {
 
@@ -28,21 +44,23 @@ export default class Adslist extends Component {
 
         return (
             //Adicionando lista de anúncios
-            <div className="listads"> 
+            <div className="listads">
                 {cafofoAds.map(ads => (
                     //Para executar o .map é necessário adicionar uma key com valor único para cada elemento.
                     //Nesse caso, usamos o ID
                     <article key={ads.id}>
-                        <strong>{ads.title}</strong>
-                        <h2>{ads.price}</h2>
-                        <Link to={'/cafofos/${ads._id}'}>Detalhes</Link>
+                        {ads.id}
+                        <h1>{ads.title}</h1>
+                        <h2>R$ {ads.price}</h2>
+                        {this.isAvailable(ads.status)}
+                        <Link to={`/cafofos/${ads.id}`}>Detalhes</Link>
                     </article>
                 ))}
             </div>
         )
-            
-        
-        
-        
+
+
+
+
     }
 }
