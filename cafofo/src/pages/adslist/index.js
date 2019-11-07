@@ -15,14 +15,10 @@ export default class Adslist extends Component {
     }
 
     loadAds = async () => {
-        await api.get('/ads')
-            .then(res => {
-                const cafofoAds = res.data;
-                this.setState({ cafofoAds });
-            })
-
-        //this.setState({ cafofoAds: response.data })
-        //.data.docs serve para ler as datas dentro das requisições de Docs 
+        const response = await api.get('/ads');
+        
+        this.setState({ cafofoAds: response.data })
+        //.data serve para ler as datas dentro das requisições de Docs 
         // Mudar de acordo com o banco de dados, junto com o BASEURL em api.js
     };
 
