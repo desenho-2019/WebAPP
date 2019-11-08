@@ -105,21 +105,21 @@
 
 .owner-cafofo h5 {
     margin-left: 4%;
-    padding-top: 2.5%;
+    align-items: center;
     color: #0099B0;
     font-weight: bold;
 }
 
 .price-cafofo {
-    width: 50%;
+    width: 400px;
     min-height: 130px;    
+    margin-left: 21%;
 }
-
+ 
 .price-cafofo h1 {
     font-size: 60px;
     float: right;
     margin-top: -2%;
-    margin-left: 15%;
     color: #fa6900;
     font-weight: bold;
 }
