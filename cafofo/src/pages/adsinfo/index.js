@@ -42,7 +42,7 @@ export default class Adsinfo extends Component {
                 </div>
                <div className="first-line">
                     <div className="title-cafofo">
-                        <h1>1 QUARTO 20m² NO CONDOMÍNIO GAMAGGIORE</h1>
+                        <h1>{adsDetail.title}</h1>
                     </div>
                     <div id="favorite-cafofo">
                         <i className="far fa-heart fa-3x"></i>
@@ -50,7 +50,7 @@ export default class Adsinfo extends Component {
                 </div>
                 <div className='adress-cafofo'>
                     <div id='text-adress'>
-                        <h6>CONDOMÍNIO GAMAGGIORE - SETOR INDUSTRIAL - GAMA/DF</h6>
+                        <h6>{adsDetail.addres}</h6>
                     </div>
                     <div id="rate-cafofo">
                         <i className="fas fa-star"></i><h5>4,3</h5>
@@ -58,11 +58,11 @@ export default class Adsinfo extends Component {
                 </div>
                 <div className="second-line">
                     <div className="owner-cafofo">
-                        <i className="fas fa-circle fa-3x"></i><h5>LUCAS GOMES</h5>
+                        <i className="fas fa-circle fa-3x"></i><h5>{adsDetail.creator}</h5>
                     </div>
                     <div className="price-cafofo">
                         <h3>ALUGUEL DE</h3>
-                        <h1>R$ 750,00</h1>
+                        <h1>R$ {adsDetail.price}</h1>
                     </div>
                 </div>
                 <div className="third-line">
@@ -82,10 +82,15 @@ export default class Adsinfo extends Component {
                 <div className="categories-cafofo">
                     <h5>DESCRIÇÃO:</h5>
                     <p>
+                    {adsDetail.description}
+                    {/*
                         1 quarto com banho de sol com um banho de sol tem todo o charme 
                         de um hotel, mas com o calor da casa. O quarto inclui um quintal 
                         privado com churrasqueira e sala de estar confortável e cozinha. 
                         1 bloco / 3 avenidas do ônibus / trem. 40 minutos para a Times Square.
+                        */
+                    }
+                        
                     </p>
                 </div>
 

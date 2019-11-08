@@ -15,7 +15,7 @@ export default class Adslist extends Component {
     }
 
     loadAds = async () => {
-        const response = await api.get('/ads');
+        const response = await api.get('/cafofos');
         
         this.setState({ cafofoAds: response.data })
         //.data serve para ler as datas dentro das requisições de Docs 
