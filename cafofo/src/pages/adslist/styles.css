@@ -1,20 +1,42 @@
-.listads {
-    max-width: 700px;
+.container-ads {
+    border: solid 2px aquamarine;
+    display: flex;
+    width: 90%;
+    height: 90%;
     margin: 20px auto 0;
-    padding: 0 20px;
 }
 
-.listads article {
-    background: #FFF;
+.container-ads div {
     border: 1px solid #DDD;
+    box-sizing: border-box;
     border-radius: 5px;
+    margin: 15px 10px;
+    height: 300px;
+    width: calc(20% - 20px);
     padding: 20px;
-    margin-bottom: 20px;
 }
 
-.listads article h2{
+.container-ads element{
+    padding: 20px;
+}
+
+.wrap{
+    flex-wrap: wrap;
+} 
+
+.container-ads h2{
     font-size: 16px;
     color: #999;
     margin-top: 5px;
     line-height: 24px;
+}
+
+.container-ads a{
+    color: inherit;
+    text-decoration: none;
+    display: flex; 
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    user-select: none;
 }

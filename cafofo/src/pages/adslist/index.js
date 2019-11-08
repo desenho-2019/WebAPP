@@ -28,21 +28,23 @@ export default class Adslist extends Component {
 
         return (
             //Adicionando lista de anúncios
-            <div className="listads"> 
+            <div className="container-ads wrap"> 
                 {cafofoAds.map(ads => (
                     //Para executar o .map é necessário adicionar uma key com valor único para cada elemento.
                     //Nesse caso, usamos o ID
-                    <article key={ads.id}>
-                        <strong>{ads.title}</strong>
-                        <h2>{ads.price}</h2>
-                        <Link to={'/cafofos/${ads._id}'}>Detalhes</Link>
-                    </article>
+                    <div key={ads.id}>
+                        <Link to={`/cafofos/${ads._id}`}>
+                            <div className="img">
+                                {ads.images.map(image => (
+                                    <img src={image.url} alt={image.path} />
+                                ))}
+                            </div>
+                            <strong>{ads.title}</strong>
+                            <h2>{ads.price}</h2>
+                        </Link>
+                    </div>
                 ))}
             </div>
         )
-            
-        
-        
-        
     }
 }

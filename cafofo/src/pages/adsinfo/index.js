@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import api from '../../services/api'
 
-import './styles.css';
+import { Form, Container } from './styles';
 
 export default class Adsinfo extends Component {
     state = {
@@ -18,17 +18,12 @@ export default class Adsinfo extends Component {
      }
     
      render() {
-         const { cafofoAds } = this.state;
-         
          return (
-             <div className="info-cafofo">
-                 <h1>{cafofoAds.title}</h1>
-                 <p>{cafofoAds.price}</p>
- 
-                 <p>
-                     Localização: <a href={cafofoAds.location}>{cafofoAds.location}</a>
-                 </p>
-             </div>
-         )
+            <Container> 
+                <Form>  
+                    <h1>Cafofo</h1>
+                </Form>
+            </Container>
+         );
      }
 }
