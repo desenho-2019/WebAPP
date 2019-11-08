@@ -6,36 +6,58 @@ import './styles.css';
 
 export default class Adsinfo extends Component {
     state = {
-        cafofoAds: []
+        adsDetail: []
     };
     
     async componentDidMount() {
+        
         const { id } = this.props.match.params;
  
          const response = await api.get(`/cafofos/${id}`);
  
-         this.setState({ cafofoAds: response.data });
- 
+         this.setState({ adsDetail: response.data });
      }
 
+     isAvailable = (status) => {
+        if (status == true) {
+            return (
+                <p id="status-dis">DISPONÍVEL</p>
+            )
+        } else {
+            return (
+                <p id="status-indis">INDISPONÍVEL</p>
+            )
+        }
+    }
+
      render() {
-         const { cafofoAds } = this.state;
+         const { adsDetail } = this.state;
          
          return (
              <React.Fragment>
              <Slider />
-             <div className='info-cafofo' >
-                <h1>Nome do Anúncio{cafofoAds.title}</h1>
-                <p>Detalhes sobre ele, falando sobre tudo, como acomodações, quantas pessoas moram...</p>
+             <div className='info-cafofo' key={adsDetail.id}>
+                <div className='status-cafofo'>
+                    {this.isAvailable(adsDetail.status)}
+                </div>
+               <div className="second-line">
+                    <div className="title-cafofo">
+                        <h1>1 QUARTO 20m² NO CONDOMÍNIO GAMAGGIORE</h1>
+                    </div>
+                    <div id="favorite-cafofo">
+                        <i className="far fa-heart fa-5x"></i>
+                    </div>
+                </div>
+                <div className='adress-cafofo'>
+                    <div id='text-adress'>
+                        <h6>CONDOMÍNIO GAMAGGIORE - SETOR INDUSTRIAL - GAMA/DF</h6>
+                    </div>
+                    <div id="rate-cafofo">
+                        <h5>4,3</h5>
+                    </div>
+                </div>
                 <br />
-                <br />
-                <p>Outros detalhes</p>
-                <br />
-                <br />
-                <p>E mais outros</p>
-                <br />
-                <br />
-                <p>Varios</p>
+               
              </div>
              </React.Fragment>
          )

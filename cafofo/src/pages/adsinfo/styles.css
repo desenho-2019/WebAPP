@@ -1,5 +1,5 @@
 .info-cafofo {
-    max-width: 800px;
+    max-width: 60%;
     margin: 20px auto 0;
     padding: 20px;
     background: #fff;
@@ -8,7 +8,15 @@
 }
 
 .info-cafofo h1{
-    font-size:32px;
+    font-size: 32px;
+    color: #0099B0;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    font-weight: bold;
+}
+
+.info-cafofo h6 {
+    font-weight: bold;
+    color: #777;
 }
 
 .info-cafofo p {
@@ -17,6 +25,58 @@
     margin-top: 5px;
 }
 
-.info-cafofo p a {
-    color: #069;
+.title-cafofo {
+    width: 80%;
+    margin-top: 2%;
+    justify-content: center;
+    align-items: center;
+}
+
+#favorite-cafofo {
+    width: 20%;
+    color: red !important;
+    float: right;
+    display: flex;
+    padding-left: 10%;
+}
+
+.status-cafofo p{
+    max-width: 20%;
+    max-height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    background-color: #666;
+    color: white !important;
+}
+
+.status-cafofo #status-dis {
+    background-color: green;
+}
+
+.status-cafofo #status-indis {
+    background-color: red;
+}
+
+.adress-cafofo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: black;
+}
+
+#text-adress {
+    width: 50%;
+    padding: 1%;
+}
+.second-line {
+    display: flex;
+    max-height: 20%;
+}
+
+#rate-cafofo {
+    margin: 0;
+    color: #777;
+    padding-top: 0.6%;
 }
