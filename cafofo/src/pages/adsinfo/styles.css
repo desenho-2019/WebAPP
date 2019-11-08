@@ -1,6 +1,7 @@
 .info-cafofo {
     max-width: 60%;
-    margin: 20px auto 0;
+    height: auto;
+    margin: 20px auto 100px;
     padding: 20px;
     background: #fff;
     border-radius: 5px;
@@ -38,6 +39,7 @@
     float: right;
     display: flex;
     padding-left: 10%;
+    padding-top: 1.5%;
 }
 
 .status-cafofo p{
@@ -57,26 +59,149 @@
 
 .status-cafofo #status-indis {
     background-color: red;
+    margin: 0;
 }
 
 .adress-cafofo {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    background-color: black;
 }
 
 #text-adress {
     width: 50%;
     padding: 1%;
 }
-.second-line {
+
+#rate-cafofo {
+    display: flex;
+    color: #777;
+    padding-top: 0.6%;
+    justify-content: space-between;
+}
+
+#rate-cafofo i {
+    color: yellow;
+    margin-top: 10%;
+    margin-right: 20%;
+}
+
+.first-line {
     display: flex;
     max-height: 20%;
 }
 
-#rate-cafofo {
-    margin: 0;
+.second-line {
+    width: auto;
+    display: flex;
+}
+
+.owner-cafofo {
+    width: 50%;
+    align-items: center;
+    display: flex;
+    color: #0099B0;
+}
+
+.owner-cafofo h5 {
+    margin-left: 4%;
+    padding-top: 2.5%;
+    color: #0099B0;
+    font-weight: bold;
+}
+
+.price-cafofo {
+    width: 50%;
+    min-height: 130px;    
+}
+
+.price-cafofo h1 {
+    font-size: 60px;
+    float: right;
+    margin-top: -2%;
+    margin-left: 15%;
+    color: #fa6900;
+    font-weight: bold;
+}
+
+.price-cafofo h3 {
+    float: right;
+    font-weight: bold;
     color: #777;
-    padding-top: 0.6%;
+}
+
+.third-line {
+    display: flex;
+}
+
+.general-detail {
+    width: 60%;
+    display: flex;
+    margin-bottom: 3%;
+}
+
+.general-detail #male {
+    color: #0099B0;
+    margin-left: 2%;
+    margin-right: 2%;   
+}
+
+.general-detail #female {
+    color: #fa6900;
+}
+
+.general-detail h5 {
+    margin-left: 5%;
+    padding-top: 2.5%;
+    color: #0099B0;
+    font-weight: bold;
+}
+
+.categories-cafofo {
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 6%;
+}
+
+.categories-cafofo h5 {
+    color: #0099B0;
+    font-weight: bold;
+    margin-bottom: 3%;
+}
+
+.categories-cafofo p {
+    font-size: 18px;
+    color: #444;
+}
+
+.categories-cafofo table {
+    width: 50%;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.categories-cafofo tr {
+    height: 50px;
+}
+
+.share-buttons {
+    width: 50%;
+}
+
+.share-buttons #share {
+    float: right;
+    color: #0099B0;
+    margin-left: 6%;
+    margin-right: 10%;
+}
+
+.share-buttons #call {
+    float: right;
+    color: #fa6900;
+    margin-left: 7%;
+}
+
+.share-buttons #whatsapp {
+    float: right;
+    color: green;
 }
