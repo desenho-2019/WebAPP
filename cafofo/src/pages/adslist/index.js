@@ -15,7 +15,7 @@ export default class Adslist extends Component {
     }
 
     loadAds = async () => {
-        const response = await api.get('/ads');
+        const response = await api.get('/cafofos');
     
         this.setState({ cafofoAds: response.data })
         //.data.docs serve para ler as datas dentro das requisições de Docs 
@@ -33,14 +33,12 @@ export default class Adslist extends Component {
                     //Para executar o .map é necessário adicionar uma key com valor único para cada elemento.
                     //Nesse caso, usamos o ID
                     <div key={ads.id}>
-                        <Link to={`/cafofos/${ads._id}`}>
-                            <div className="img">
-                                {ads.images.map(image => (
-                                    <img src={image.url} alt={image.path} />
-                                ))}
-                            </div>
+                        <Link to={`/cafofos/${ads.id}`}>
+                            <img src={ads.img}/>
                             <strong>{ads.title}</strong>
-                            <h2>{ads.price}</h2>
+                            <h2>{ads.addres}</h2>
+                            <h4>Quartos {ads.room} • Banheiros {ads.bathroom}</h4>
+                            <h3> R$ {ads.price}</h3>
                         </Link>
                     </div>
                 ))}
