@@ -4,17 +4,20 @@
 
 .container-ads {
     border: solid 2px aquamarine;
-    display: flex;
+    display: grid;
     width: 90%;
     height: 90%;
-    margin: 20px auto 0;
+    margin: 0 auto;
+
+    grid-template-columns: repeat(auto-fill, minmax(322.6px, 1fr));
+    /* grid-gap: 20px; */
+
 }
 
 .container-ads div {
     box-sizing: border-box;
     border-radius: 5px;
     margin: 15px 10px;
-    width: 322.6px;
 }
 
 .container-ads h2{
