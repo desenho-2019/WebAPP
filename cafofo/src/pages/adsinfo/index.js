@@ -74,23 +74,22 @@ export default class Adsinfo extends Component {
                         <h5>1 BANHEIRO</h5>
                     </div>
                     <div className="share-buttons">
-                        <i className="fas fa-share-alt fa-3x" id="share"></i>
-                        <i className="fas fa-phone-alt fa-3x" id="call"></i>
-                        <i className="fab fa-whatsapp fa-3x" id="whatsapp"></i>
+                        <a href={`https://api.whatsapp.com/send?phone=${adsDetail.phone}`}>
+                            <i className="fab fa-whatsapp fa-3x" id="whatsapp"></i>
+                        </a>
+                        <a href="">
+                            <i className="fas fa-share-alt fa-3x" id="share"></i>
+                        </a>
+                        <a href={`tel:${adsDetail.phone}`}>
+                            <i className="fas fa-phone-alt fa-3x" id="call"></i>
+                        </a>
+                        
                     </div>
                 </div>
                 <div className="categories-cafofo">
                     <h5>DESCRIÇÃO:</h5>
                     <p>
                     {adsDetail.description}
-                    {/*
-                        1 quarto com banho de sol com um banho de sol tem todo o charme 
-                        de um hotel, mas com o calor da casa. O quarto inclui um quintal 
-                        privado com churrasqueira e sala de estar confortável e cozinha. 
-                        1 bloco / 3 avenidas do ônibus / trem. 40 minutos para a Times Square.
-                        */
-                    }
-                        
                     </p>
                 </div>
 
