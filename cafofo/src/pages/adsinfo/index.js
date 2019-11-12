@@ -50,7 +50,7 @@ export default class Adsinfo extends Component {
                 </div>
                 <div className='adress-cafofo'>
                     <div id='text-adress'>
-                        <h6>{adsDetail.addres}</h6>
+                        <h6>{adsDetail.location}</h6>
                     </div>
                     <div id="rate-cafofo">
                         <i className="fas fa-star"></i><h5>4,3</h5>
@@ -58,7 +58,7 @@ export default class Adsinfo extends Component {
                 </div>
                 <div className="second-line">
                     <div className="owner-cafofo">
-                        <i className="fas fa-circle fa-3x"></i><h5>{adsDetail.creator}</h5>
+                        <i className="fas fa-circle fa-3x"></i><h5>{adsDetail.owner}</h5>
                     </div>
                     <div className="price-cafofo">
                         <h3>ALUGUEL DE</h3>
@@ -69,18 +69,18 @@ export default class Adsinfo extends Component {
                     <div className="general-detail">
                         <i className="fas fa-mars fa-3x" id="male"></i>
                         <i className="fas fa-venus fa-3x" id="female"></i>    
-                        <h5>3 HOSPEDES</h5>
-                        <h5>2 QUARTOS</h5>
-                        <h5>1 BANHEIRO</h5>
+                        <h5>{adsDetail.guests} HOSPEDES</h5>
+                        <h5>{adsDetail.rooms} QUARTOS</h5>
+                        <h5>{adsDetail.bathrooms} BANHEIRO</h5>
                     </div>
                     <div className="share-buttons">
-                        <a href={`https://api.whatsapp.com/send?phone=${adsDetail.phone}`}>
+                        <a href={`https://api.whatsapp.com/send?phone=${adsDetail.contact}`}>
                             <i className="fab fa-whatsapp fa-3x" id="whatsapp"></i>
                         </a>
                         <a href="">
                             <i className="fas fa-share-alt fa-3x" id="share"></i>
                         </a>
-                        <a href={`tel:${adsDetail.phone}`}>
+                        <a href={`tel:${adsDetail.contact}`}>
                             <i className="fas fa-phone-alt fa-3x" id="call"></i>
                         </a>
                         
@@ -95,7 +95,8 @@ export default class Adsinfo extends Component {
 
                 <div className="categories-cafofo">
                     <h5>DESPESAS INCLUSAS:</h5>
-                    <table>
+                    <p>{adsDetail.expenses}</p>
+                    {/*<table>
                         <tr>
                             <td>ÁGUA</td>
                             <td>INTERNET 120G</td>
@@ -104,12 +105,13 @@ export default class Adsinfo extends Component {
                             <td>LUZ</td>
                             <td>CONDOMÍNIO</td>
                         </tr>
-                    </table>
+                    </table>*/}
                 </div>
 
                 <div className="categories-cafofo">
                     <h5>COMODIDADES:</h5>
-                    <table>
+                    <p>{adsDetail.comodities}</p>
+                    {/*<table>
                         <tr>
                             <td>PISCINA</td>
                             <td>AR CONDICIONADO</td>
@@ -120,12 +122,13 @@ export default class Adsinfo extends Component {
                             <td>ACADEMIA</td>
                             <td>ELEVADOR</td>
                         </tr>
-                    </table>
+                    </table>*/}
                 </div>
 
                 <div className="categories-cafofo">
                     <h5>POLÍTICAS DE CONVIVÊNCIA:</h5>
-                    <table>
+                    <p>{adsDetail.terms}</p>
+                    {/*<table>
                         <tr>
                             <td>PROIBIDO FUMAR</td>
                             <td>SILÊNCIO APÓS AS 22H</td>
@@ -133,7 +136,7 @@ export default class Adsinfo extends Component {
                         <tr>
                             <td>LIBERADO ANIMAIS</td>
                         </tr>
-                    </table>
+                    </table>*/}
                 </div>
 
                 
