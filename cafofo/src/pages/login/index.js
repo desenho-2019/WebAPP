@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ButtonFactory from '../../factory/button/index';
 
 import { Form, Container } from "./styles";
 
@@ -32,7 +33,13 @@ export default class Login extends Component {
         return (
             <Container>
                 <Form onSubmit={this.handleSubmit}>
-                <h1>Acesse a sua conta</h1>
+                <h1>Entrar</h1>
+                <div id="button-factory">
+                    {ButtonFactory.factoryMethod('email')}
+                    {ButtonFactory.factoryMethod('facebook')}
+                    {ButtonFactory.factoryMethod('google')}
+                </div>
+
                 <input
                     type="email"
                     placeholder="Endereço de e-mail"
@@ -43,8 +50,9 @@ export default class Login extends Component {
                     placeholder="Senha"
                     onChange={e => this.setState({ password: e.target.value })}
                 />
-                <Link to="/esqueci-a-senha">Esqueceu sua senha?</Link>
                 <button type="submit">Entrar</button>
+                <Link to="/esqueci-a-senha">Esqueceu sua senha?</Link>
+
                 <hr />
                 <Link to="/cadastro">Cadastre-se</Link>
                 </Form>

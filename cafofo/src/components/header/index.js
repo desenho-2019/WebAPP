@@ -12,11 +12,18 @@ const Header = () =>
       <img
         alt=""
         src="/cafofo_favicon.png"
-        width="30"
-        height="25"
+        width="35"
+        height="30"
         className="d-inline-block align-top"
       />
-      {' Cafofo'}
+      <img
+        id="logo-letter"
+        alt=""
+        src="/cafofoLogoLetter.png"
+        width="70"
+        height="30"
+        className="d-inline-block align-top"
+      />
 </Navbar.Brand>
 <Navbar.Toggle aria-controls="basic-navbar-nav" />
 <Navbar.Collapse id="justify-content-end">

@@ -53,7 +53,8 @@ export default class userRegister extends Component {
             <Container>
                 <Form onSubmit={this.handleSubmit}>
                 <h1>Cadastre-se</h1>
-                <div className="grid-container">
+                <hr />
+                <br></br>
                 <input
                     type="text"
                     placeholder="Nome completo"
@@ -86,8 +87,7 @@ export default class userRegister extends Component {
                     placeholder="Facebook"
                     onChange={e => this.setState({ facebook: e.target.value })}
                 />
-                </div>
-                <div className="grid-container">
+                
                 <input
                     id="file"
                     type="file"
@@ -117,7 +117,6 @@ export default class userRegister extends Component {
                     onChange={e => this.setState({ confirmPassword: e.target.value })}
                     required
                 />
-                </div>
                 <button type="submit">Cadastrar</button>
                 <hr />
                 <Link to="/login">Já possui conta? Faça Login</Link>

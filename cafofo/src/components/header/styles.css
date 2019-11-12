@@ -10,7 +10,7 @@
     color:#fa6900;
 }
 #brand-icon {
-    margin-left: 40px;
+    margin-left: 8%;
 }
 
 .button-header {
@@ -42,3 +42,6 @@
     transform: scale(1.002);
 }
 
+#logo-letter {
+    margin-left: 12%;
+}
