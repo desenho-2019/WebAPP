@@ -18,6 +18,7 @@ export const Form = styled.form`
   flex-direction: column;
   align-items: center;
   border-radius: 4px;
+
   img {
     width: 100px;
     margin: 10px 0 40px;
