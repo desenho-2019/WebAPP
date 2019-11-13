@@ -44,7 +44,7 @@ export default class DateFilter extends React.Component {
         <div className="InputFromTo">
           <DayPickerInput
             value={from}
-            placeholder="From"
+            placeholder="Data inicial"
             format="LL"
             formatDate={formatDate}
             parseDate={parseDate}
@@ -58,12 +58,12 @@ export default class DateFilter extends React.Component {
             }}
             onDayChange={this.handleFromChange}
           />{' '}
-          —{' '}
+          {' '}
           <span className="InputFromTo-to">
             <DayPickerInput
               ref={el => (this.to = el)}
               value={to}
-              placeholder="To"
+              placeholder="Data final"
               format="LL"
               formatDate={formatDate}
               parseDate={parseDate}
