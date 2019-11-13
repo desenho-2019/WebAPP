@@ -11,6 +11,7 @@
     "react-dom": "^16.10.1",
     "react-gesture-gallery": "^1.1.0",
     "react-gesture-responder": "^2.1.0",
+    "react-picker": "^1.2.15",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.1.2",
     "react-social-login-buttons": "^3.0.0",

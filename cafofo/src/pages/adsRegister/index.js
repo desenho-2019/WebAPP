@@ -54,7 +54,7 @@ export default class AdsRegister extends Component {
             contact, terms, target_gender, status, owner, rooms, bathrooms,
             location, guests } = this.state;
         return (
-            <div>
+            <div style={{ flexDirection: "row" }}>
                 <h1>Vamos criar seu anúncio</h1>
                 <form onSubmit={this.submitHandler}>
 
@@ -79,6 +79,89 @@ export default class AdsRegister extends Component {
                         value={image}
                         onChange={this.changeHandler}
                     />
+
+                    <input
+                        name="price"
+                        type="number"
+                        placeholder="Valor do aluguel"
+                        value={price}
+                        onChange={this.changeHandler}
+                    />
+                    <textarea
+                        name="expenses"
+                        placeholder="Despesas"
+                        value={expenses}
+                        onChange={this.changeHandler}
+                    />
+                    <textarea
+                        name="commodities"
+                        placeholder="Comodidades"
+                        value={commodities}
+                        onChange={this.changeHandler}
+                    />
+                    <input
+                        name="contact"
+                        type="tel"
+                        placeholder="Telefone"
+                        value={contact}
+                        onChange={this.changeHandler}
+                    />
+                    <textarea
+                        name="terms"
+                        placeholder="Políticas de convivência"
+                        value={terms}
+                        onChange={this.changeHandler}
+                    />
+                    <select
+                        name="target_gender"
+                        onChange={this.changeHandler}
+                        value={target_gender}
+                    >
+                        <option value="ambos">Qualquer</option>
+                        <option value="feminino">Feminino</option>
+                        <option value="masculino">Masculino</option>
+                    </select>
+
+                    {//status = true
+                    }
+
+
+                    {// Tem que mandar este nome via USER
+                        //owner = "Anunciante"
+                    }
+
+                    <input
+                        name="rooms"
+                        value={rooms}
+                        onChange={this.changeHandler}
+                        placeholder="Quantidade de quartos disponíveis"
+                    />
+
+                    <input
+                        name="bathrooms"
+                        value={bathrooms}
+                        onChange={this.changeHandler}
+                        placeholder="Quantidade de bathrooms disponíveis"
+
+                    />
+
+                    <input
+                        name="location"
+                        value={location}
+                        onChange={this.changeHandler}
+                        placeholder="CEP"
+
+                    />
+
+                    <input
+                        name="guests"
+                        value={guests}
+                        onChange={this.changeHandler}
+                        placeholder="Vagas"
+
+                    />
+
+
 
                     <button type="submit">Submit</button>
 
