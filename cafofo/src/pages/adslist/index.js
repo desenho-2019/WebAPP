@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import api from '../../services/api';
 import { Link } from 'react-router-dom';
 import DateFilter from '../../components/day-picker';
+import NumericInput from 'react-numeric-input';
+
 import './styles.css';
 
 export default class Adslist extends React.Component {
@@ -30,7 +32,18 @@ export default class Adslist extends React.Component {
 
             <div>
                 <div className="filter-bar">
-                    <DateFilter /> 
+                    <div className="filter-date">
+                        <label>Data</label><br/>
+                        <DateFilter/>
+                    </div>
+                    <div className="filter-bedroom">
+                        <label>Quartos</label><br/>
+                        <NumericInput mobile min={1} value={1}/>
+                    </div>
+                    <div className="filter-bathroom">
+                        <label>Banheiros</label><br/>
+                        <NumericInput mobile min={1} value={1}/>
+                    </div>
                 </div>
                 <div className="container-ads wrap"> 
                     {cafofoAds.map(ads => (
