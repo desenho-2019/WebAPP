@@ -18,7 +18,7 @@ export const Form = styled.form`
   margin-top: 3%;
   margin-bottom: 50px;
   flex-direction: column;
-  border-radius: 4px;
+  border-radius: 10px;
 
   .forms-container {
     width: 100%;
@@ -27,14 +27,15 @@ export const Form = styled.form`
 
   .forms-collumn-1 {
     display: table;
-    width: 50%;
+    width: 45%;
+    padding-left: 5%;
     float: left;
   }
 
   .forms-collumn-2 {
     display: table;
     width: 50%;
-    padding-left: 5%;
+    padding-left: 10%;
     overflow: hidden;
   }
 
@@ -45,7 +46,7 @@ export const Form = styled.form`
   input, textarea {
     display: flex;
     height: 46px;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
     padding: 9px 20px;
     color: #000;
     font-size: 15px;
@@ -62,7 +63,7 @@ export const Form = styled.form`
     height: 90px !important;
   }
 
-  input:focus {
+  input:focus , textarea:focus {
     border: 1px solid #0099B0;
   }
 
@@ -79,9 +80,35 @@ export const Form = styled.form`
       color: #999;
     }
   }
-  input#file {
-    padding-top: 8px; 
+  .inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
   }
+
+  .inputfile + label {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 6px;
+    border-radius: 6px;
+    border: 2px solid #fa6900;
+    color: white;
+    background-color: #fa6900;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+  .inputfile:focus + label,
+  .inputfile + label:hover {
+      background-color: #f38633;
+      transition-duration: 0.3s;
+      transform: scale(1.002);
+      border-color: #f38633;
+  }
+  
   button {
     color: #FFF;
     font-weight: bold;
@@ -125,5 +152,31 @@ export const Form = styled.form`
     margin-bottom: 5px;
     text-align: center;
     color: #0099B0;
+  }
+  h5 {
+    width: 100%;
+    display: flex;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    font-weight: bold;
+    margin-bottom: 2px;
+    color: #0099B0;
+  }
+  h6 {
+    color: red;
+  }
+  span {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    color: #999;
+  }
+  p {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #f38633;
+    margin-bottom: 2%;
+    margin-top: -1%;
+    font-size: 17px;
   }
 `
