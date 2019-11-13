@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import api from '../../services/api';
 import { Link } from 'react-router-dom';
-
+import DateFilter from '../../components/day-picker';
 import './styles.css';
 
-export default class Adslist extends Component {
+export default class Adslist extends React.Component {
     state = {
         cafofoAds: []
     };
@@ -27,22 +27,28 @@ export default class Adslist extends Component {
         const { cafofoAds } = this.state;
 
         return (
-            //Adicionando lista de anúncios
-            <div className="container-ads wrap"> 
-                {cafofoAds.map(ads => (
-                    //Para executar o .map é necessário adicionar uma key com valor único para cada elemento.
-                    //Nesse caso, usamos o ID
-                    <div key={ads.id}>
-                        <Link to={`/cafofos/${ads.id}`}>
-                            <img src={ads.img}/>
-                            <strong>{ads.title}</strong>
-                            <h2>{ads.addres}</h2>
-                            <h4>Quartos {ads.room} • Banheiros {ads.bathroom}</h4>
-                            <h3> R$ {ads.price}</h3>
-                        </Link>
-                    </div>
-                ))}
+
+            <div>
+                <div className="filter-bar">
+                    <DateFilter /> 
+                </div>
+                <div className="container-ads wrap"> 
+                    {cafofoAds.map(ads => (
+                        //Para executar o .map é necessário adicionar uma key com valor único para cada elemento.
+                        //Nesse caso, usamos o ID
+                        <div key={ads.id}>
+                            <Link to={`/cafofos/${ads.id}`}>
+                                <img src={ads.img}/>
+                                <strong>{ads.title}</strong>
+                                <h2>{ads.addres}</h2>
+                                <h4>Quartos {ads.room} • Banheiros {ads.bathroom}</h4>
+                                <h3>R$ {ads.price}</h3>
+                            </Link>
+                        </div>
+                    ))}
+                </div>
             </div>
+
         )
     }
 }
