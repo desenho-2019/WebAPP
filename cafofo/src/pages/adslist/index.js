@@ -3,6 +3,8 @@ import api from '../../services/api';
 import { Link } from 'react-router-dom';
 import DateFilter from '../../components/day-picker';
 import NumericInput from 'react-numeric-input';
+import Range from 'rc-slider';
+import 'rc-slider/assets/index.css';
 
 import './styles.css';
 
@@ -35,6 +37,10 @@ export default class Adslist extends React.Component {
                     <div className="filter-date">
                         <label>Data</label><br/>
                         <DateFilter/>
+                    </div>
+                    <div className="filter-price">
+                        <label>Preço</label><br/>
+                        <Range min={0} max={20} defaultValue={[3, 10]} tipFormatter={value => `${value}%`} />
                     </div>
                     <div className="filter-bedroom">
                         <label>Quartos</label><br/>

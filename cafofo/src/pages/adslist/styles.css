@@ -35,7 +35,6 @@ input:focus{
 }
 
 .react-numeric-input input{
-    /* color: red; */
     padding-right: 0px !important;
     padding-left: 0px !important;
     width: 80px !important;
@@ -64,6 +63,15 @@ label{
 
 .filter-bathroom{
     margin-right: 2.5rem;
+}
+
+.filter-price{
+    width: 300px;
+    margin-right: 2.5rem;
+}
+
+.rc-slider{
+    height: 35px;
 }
 
 .wrap{
