@@ -1,6 +1,7 @@
 import React, { Component, Fragment }  from 'react';
 import api from '../../services/api';
 import { Slider } from './slider';
+import CarouselSlider from './carousel'
 
 import './styles.css';
 
@@ -35,7 +36,7 @@ export default class Adsinfo extends Component {
          
          return (
              <React.Fragment>
-             <Slider />
+             <CarouselSlider />
              <div className='info-cafofo' key={adsDetail.id}>
                 <div className='status-cafofo'>
                     {this.isAvailable(adsDetail.status)}
