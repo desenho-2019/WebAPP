@@ -1,14 +1,7 @@
 import React, { Component } from 'react'
 import {
-    Carousel,
-    CarouselItem,
-    CarouselIndicators,
     UncontrolledCarousel
 } from 'reactstrap'
-import api from './../../services/api'
-
-import { images } from './images'
-
 
 export default class CarouselSlider extends Component {
 
