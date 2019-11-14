@@ -23,6 +23,7 @@
     border: 1px solid #DDD;
     border-radius: 5px;
     box-shadow: 0 2px 4px 0 rgba(68,68,68,0.16);
+    margin-top: 0;
 }
 
 input:focus{
@@ -34,20 +35,6 @@ input:focus{
     white-space: nowrap !important;
 }
 
-.react-numeric-input input{
-    padding-right: 0px !important;
-    padding-left: 0px !important;
-    width: 80px !important;
-    border: 1px solid #DDD!important;
-    box-shadow: white !important;
-    border-radius: 5px !important;
-}
-
-.react-numeric-input b{
-    background: white !important;
-    border: 0 !important;
-}
-
 label{
     font-weight: bold;
     font-size: 14px;
@@ -57,12 +44,32 @@ label{
     margin-left: 2.5rem; 
     margin-right: 2.5rem;
 }
- .filter-bedroom{
-    margin-right: 2.5rem; 
- }
 
-.filter-bathroom{
+.filter-genre{
     margin-right: 2.5rem;
+}
+
+.filter-genre select{
+    width: 120px;
+    height: 35px;
+    font-size: 14px;
+    padding: 0 14px;
+    background: white;
+    border: 1px solid #DDD;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px 0 rgba(68,68,68,0.16);
+}
+
+.filter-amenities{
+    width: 700px;
+}
+
+._2OR24XnUXt8OCrysr3G0XI{
+    padding: 0;
+    width: 700px;
+    height: 35px;
+    border: 1px solid white;
+    white-space: nowrap !important;
 }
 
 .filter-price{
@@ -140,4 +147,3 @@ label{
     height: 60%;
     border-radius: 5px;
 }
-

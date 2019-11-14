@@ -2,21 +2,34 @@ import React, { Component } from 'react';
 import api from '../../services/api';
 import { Link } from 'react-router-dom';
 import DateFilter from '../../components/day-picker';
-import NumericInput from 'react-numeric-input';
 import Range from 'rc-slider';
+import { Multiselect } from "multiselect-react-dropdown";
 import 'rc-slider/assets/index.css';
 
 import './styles.css';
 
 export default class Adslist extends React.Component {
+    
     state = {
-        cafofoAds: []
-    };
+        cafofoAds: [],
+        objectArray: [
+            { key: "Piscina", id: 1 },
+            { key: "Máquina de lavar", id: 2 },
+            { key: "Mobiliado", id: 3 },
+            { key: "Ferro de passar", id: 4 },
+          ],
+        //   selectedValues: [
+        //     { key: "Piscina", id: 1 },
+        //     { key: "Máquina de lavar", id: 2 },
+        //     { key: "Mobiliado", id: 3 },
+        //     { key: "Ferro de passar", id: 4 },
+        //   ]
+    }
     
     //Executa a ação quando o elemento já é renderizado na tela
     componentDidMount() {
         this.loadAds();
-    }
+    };
 
     loadAds = async () => {
         const response = await api.get('/cafofos');
@@ -28,6 +41,7 @@ export default class Adslist extends React.Component {
 
     render() {
 
+        const { plainArray, objectArray, selectedValues } = this.state;
         const { cafofoAds } = this.state;
 
         return (
@@ -42,13 +56,23 @@ export default class Adslist extends React.Component {
                         <label>Preço</label><br/>
                         <Range min={0} max={20} defaultValue={[3, 10]} tipFormatter={value => `${value}%`} />
                     </div>
-                    <div className="filter-bedroom">
-                        <label>Quartos</label><br/>
-                        <NumericInput mobile min={1} value={1}/>
+                    <div className="filter-genre">
+                        <label>Gênero</label><br/>
+                        <form>
+                            <select id="genre" name="genre">
+                            <option value="masc">Masculino</option>
+                            <option value="fem">Feminino</option>
+                            <option value="indef">Indefinido</option>
+                            </select>
+                        </form>
                     </div>
-                    <div className="filter-bathroom">
-                        <label>Banheiros</label><br/>
-                        <NumericInput mobile min={1} value={1}/>
+                    <div class="filter-amenities">
+                        <label>Comodidades</label><br/>
+                        <Multiselect
+                        options={objectArray}
+                        displayValue="key"
+                        // selectedValues={selectedValues}
+                        />
                     </div>
                 </div>
                 <div className="container-ads wrap"> 
