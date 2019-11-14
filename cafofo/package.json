@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.6.0",
     "axios": "^0.19.0",
     "bootstrap": "^4.3.1",
     "react": "^16.10.1",
@@ -10,9 +11,11 @@
     "react-dom": "^16.10.1",
     "react-gesture-gallery": "^1.1.0",
     "react-gesture-responder": "^2.1.0",
+    "react-picker": "^1.2.15",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.1.2",
     "react-social-login-buttons": "^3.0.0",
+    "reactstrap": "^8.1.1",
     "styled-components": "^4.4.0"
   },
   "scripts": {
