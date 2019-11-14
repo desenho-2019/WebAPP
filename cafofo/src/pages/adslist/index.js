@@ -9,7 +9,7 @@ import 'rc-slider/assets/index.css';
 import './styles.css';
 
 export default class Adslist extends React.Component {
-    
+
     state = {
         cafofoAds: [],
         objectArray: [
@@ -17,7 +17,7 @@ export default class Adslist extends React.Component {
             { key: "Máquina de lavar", id: 2 },
             { key: "Mobiliado", id: 3 },
             { key: "Ferro de passar", id: 4 },
-          ],
+        ],
         //   selectedValues: [
         //     { key: "Piscina", id: 1 },
         //     { key: "Máquina de lavar", id: 2 },
@@ -25,7 +25,7 @@ export default class Adslist extends React.Component {
         //     { key: "Ferro de passar", id: 4 },
         //   ]
     }
-    
+
     //Executa a ação quando o elemento já é renderizado na tela
     componentDidMount() {
         this.loadAds();
@@ -33,7 +33,7 @@ export default class Adslist extends React.Component {
 
     loadAds = async () => {
         const response = await api.get('/cafofos');
-    
+
         this.setState({ cafofoAds: response.data })
         //.data.docs serve para ler as datas dentro das requisições de Docs 
         // Mudar de acordo com o banco de dados, junto com o BASEURL em api.js
@@ -49,43 +49,44 @@ export default class Adslist extends React.Component {
             <div>
                 <div className="filter-bar">
                     <div className="filter-date">
-                        <label>Data</label><br/>
-                        <DateFilter/>
+                        <label>Data</label><br />
+                        <DateFilter />
                     </div>
                     <div className="filter-price">
-                        <label>Preço</label><br/>
+                        <label>Preço</label><br />
                         <Range min={0} max={20} defaultValue={[3, 10]} tipFormatter={value => `${value}%`} />
                     </div>
                     <div className="filter-genre">
-                        <label>Gênero</label><br/>
+                        <label>Gênero</label><br />
                         <form>
                             <select id="genre" name="genre">
-                            <option value="masc">Masculino</option>
-                            <option value="fem">Feminino</option>
-                            <option value="indef">Indefinido</option>
+                                <option value="masc">Masculino</option>
+                                <option value="fem">Feminino</option>
+                                <option value="indef">Indefinido</option>
                             </select>
                         </form>
                     </div>
                     <div class="filter-amenities">
-                        <label>Comodidades</label><br/>
+                        <label>Comodidades</label><br />
                         <Multiselect
-                        options={objectArray}
-                        displayValue="key"
+                            options={objectArray}
+                            displayValue="key"
                         // selectedValues={selectedValues}
                         />
                     </div>
                 </div>
-                <div className="container-ads wrap"> 
+                <div className="container-ads wrap">
                     {cafofoAds.map(ads => (
                         //Para executar o .map é necessário adicionar uma key com valor único para cada elemento.
                         //Nesse caso, usamos o ID
                         <div key={ads.id}>
                             <Link to={`/cafofos/${ads.id}`}>
-                                <img src={ads.img}/>
+                                <img src={ads.img} />
                                 <strong>{ads.title}</strong>
                                 <h2>{ads.addres}</h2>
-                                <h4>Quartos {ads.room} • Banheiros {ads.bathroom}</h4>
+                                <h4>{ads.rooms} Quartos • {ads.bathrooms} Banheiros</h4>
                                 <h3>R$ {ads.price}</h3>
+                                {console.log(ads)}
                             </Link>
                         </div>
                     ))}
