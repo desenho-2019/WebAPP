@@ -6,11 +6,39 @@
     box-shadow: 0px -30px 43px 6px rgba(0,0,0,0.68);
         
 }   
+
 #justify-content-end{
     color:#fa6900;
+    padding-right: 7%;
 }
 #brand-icon {
     margin-left: 8%;
+}
+
+.photo-header i {
+   color: #0099B0;
+   justify-content: center;
+   align-items: center;
+   margin-top: 25%;
+   margin-right: 5%;
+   margin-left: 80%;
+}
+
+#item-photo-header:hover {
+    color: #0099b0;
+}
+
+#item-photo-header:active {
+    background-color: #A7DBD7;
+}
+
+.header-search-bar {
+    width: 30%;
+    height: 45px;
+    padding-left: 1%;
+    margin-left: 3%;
+    border-color: rgb(197, 197, 197);
+    border: 1px ridge;
 }
 
 .button-header {

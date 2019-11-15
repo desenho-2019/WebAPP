@@ -45,13 +45,8 @@ export default class Adslist extends React.Component {
         const { cafofoAds } = this.state;
 
         return (
-
             <div>
                 <div className="filter-bar">
-                    <div className="filter-date">
-                        <label>Data</label><br />
-                        <DateFilter />
-                    </div>
                     <div className="filter-price">
                         <label>Preço</label><br />
                         <Range min={0} max={20} defaultValue={[3, 10]} tipFormatter={value => `${value}%`} />
@@ -60,8 +55,8 @@ export default class Adslist extends React.Component {
                         <label>Gênero</label><br />
                         <form>
                             <select id="genre" name="genre">
-                                <option value="masc">Masculino</option>
-                                <option value="fem">Feminino</option>
+                                <option value="masc">Apenas Masculino</option>
+                                <option value="fem">Apenas Feminino</option>
                                 <option value="indef">Indefinido</option>
                             </select>
                         </form>
@@ -83,6 +78,7 @@ export default class Adslist extends React.Component {
                             <Link to={`/cafofos/${ads.id}`}>
                                 <img src={ads.img} />
                                 <strong>{ads.title}</strong>
+                                <h2>{ads.location}</h2>
                                 <h2>{ads.addres}</h2>
                                 <h4>{ads.rooms} Quartos • {ads.bathrooms} Banheiros</h4>
                                 <h3>R$ {ads.price}</h3>
