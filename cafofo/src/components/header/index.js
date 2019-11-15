@@ -11,8 +11,8 @@ class Header extends Component {
 	*/
 	
 	render() {
-		//localStorage.removeItem('token')
-		localStorage.setItem('token', '1')
+		localStorage.removeItem('token')
+		//localStorage.setItem('token', '1')
 
 		if (localStorage.getItem('token')) {
 			//navbar logada

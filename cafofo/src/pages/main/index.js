@@ -19,7 +19,7 @@ export default class Main extends Component {
                                 <button className="button" id="search-button"><i class="fa fa-search"></i></button>
                             </div>
                             <Link to="/cafofos">
-                                <button className="button" id="list-button"><i>Me mostre os cafofos disponíveis</i></button>
+                                <button className="button" id="list-button"><i>IR PARA CAFOFOS</i></button>
 
                             </Link>
                         </div>

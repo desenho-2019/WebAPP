@@ -70,6 +70,7 @@ export default class Adslist extends React.Component {
                         />
                     </div>
                 </div>
+                <hr />
                 <div className="container-ads wrap">
                     {cafofoAds.map(ads => (
                         //Para executar o .map é necessário adicionar uma key com valor único para cada elemento.
@@ -77,12 +78,13 @@ export default class Adslist extends React.Component {
                         <div key={ads.id}>
                             <Link to={`/cafofos/${ads.id}`}>
                                 <img src={ads.img} />
-                                <strong>{ads.title}</strong>
-                                <h2>{ads.location}</h2>
-                                <h2>{ads.addres}</h2>
-                                <h4>{ads.rooms} Quartos • {ads.bathrooms} Banheiros</h4>
-                                <h3>R$ {ads.price}</h3>
-                                {console.log(ads)}
+                                <div id="container-ads-text">
+                                    <strong>{ads.title}</strong>
+                                    <h2>{ads.location}</h2>
+                                    <h2>{ads.addres}</h2>
+                                    <h4>{ads.rooms} Quartos • {ads.bathrooms} Banheiros</h4>
+                                    <h3>R$ {ads.price}</h3>
+                                </div>
                             </Link>
                         </div>
                     ))}
