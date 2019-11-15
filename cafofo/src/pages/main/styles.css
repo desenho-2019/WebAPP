@@ -38,6 +38,7 @@
     width: 100%;
     text-align: center;
     font-size: 45px;
+    flex-direction: row;
   }
 
   p {
@@ -72,6 +73,12 @@
     border-color: #0099B0;
     border-style: 1 solid;
     height: 62px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .button#list-button{
+    border-color: #0099B0;
+    border-style: 1 solid;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }
 
