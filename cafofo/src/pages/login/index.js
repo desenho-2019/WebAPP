@@ -45,11 +45,6 @@ export default class Login extends Component {
             <Container>
                 <Form onSubmit={this.handleSubmit}>
                     <h1>Entrar</h1>
-                    <div id="button-factory">
-                        {ButtonFactory.factoryMethod('email')}
-                        {ButtonFactory.factoryMethod('facebook')}
-                        {ButtonFactory.factoryMethod('google')}
-                    </div>
 
                     <input
                         name="email"
@@ -67,6 +62,11 @@ export default class Login extends Component {
                     <Link to="/esqueci-a-senha">Esqueceu sua senha?</Link>
 
                     <hr />
+                    <div id="button-factory">
+                        {ButtonFactory.factoryMethod('email')}
+                        {ButtonFactory.factoryMethod('facebook')}
+                        {ButtonFactory.factoryMethod('google')}
+                    </div>
                     <Link to="/cadastro">Cadastre-se</Link>
                 </Form>
             </Container>

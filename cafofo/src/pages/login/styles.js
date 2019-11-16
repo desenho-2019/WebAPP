@@ -59,7 +59,7 @@ export const Form = styled.form`
   hr {
     margin-top: 20px;
     margin-bottom: 20px;
-    border-color: #0099B0;
+    /* border-color: #0099B0; */
     border-bottom: 1px solid #cdcdcd;
     width: 100%;
   }
