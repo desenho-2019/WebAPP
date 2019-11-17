@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import api from '../../services/api';
 import { Link } from 'react-router-dom';
-import DateFilter from '../../components/day-picker';
 import Range from 'rc-slider';
 import { Multiselect } from "multiselect-react-dropdown";
 import 'rc-slider/assets/index.css';
 
 import './styles.css';
 
-export default class Adslist extends React.Component {
+export default class Adslist extends Component {
 
     state = {
         cafofoAds: [],

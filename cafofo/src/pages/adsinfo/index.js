@@ -1,6 +1,5 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import api from '../../services/api';
-import { Slider } from './slider';
 import CarouselSlider from './carousel'
 
 import './styles.css';
@@ -21,7 +20,7 @@ export default class Adsinfo extends Component {
     }
 
     isAvailable = (status) => {
-        if (status == true) {
+        if (status === true) {
             return (
                 <p id="status-dis">DISPONÍVEL</p>
             )

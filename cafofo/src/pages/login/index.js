@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ButtonFactory from '../../factory/button/index';
 import axios from 'axios'
@@ -33,6 +33,7 @@ export default class Login extends Component {
             .then(response => {
                 console.log(response)
                 localStorage.setItem('token', response.access);
+                this.props.history.push('/')
             })
             .catch(error => {
                 console.log(error)

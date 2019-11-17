@@ -1,21 +1,17 @@
 import React, { Component } from 'react';
-import { Nav, Navbar, Container, Form, Button, FormControl, NavDropdown } from 'react-bootstrap';
+import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 import './styles.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Link } from 'react-router-dom';
-
 
 class Header extends Component {
-	/*
-	  Linha de Código para simular usuário logado
-	*/
-	
-	render() {
-		localStorage.removeItem('token')
-		//localStorage.setItem('token', '1')
 
+	sair() {
+		localStorage.removeItem('token');
+	}
+
+	render() {
 		if (localStorage.getItem('token')) {
-			//navbar logada
 			return (
 				<Navbar className="navbar navbar-light" bg="light" expand="lg">
 					<Navbar.Brand href="/" id="brand-icon">
@@ -45,12 +41,14 @@ class Header extends Component {
 							<Nav.Link className="button-header" href="/register-cafofo">ANUNCIE UM CAFOFO</Nav.Link>
 							<NavDropdown className="photo-header" alignRight title={
 								<i class="fas fa-adjust fa-2x"></i>
-							} 
-							id="dropdown-item-button">
+							}
+								id="dropdown-item-button">
 								<NavDropdown.Item id="item-photo-header" href="">Perfil</NavDropdown.Item>
 								<NavDropdown.Item id="item-photo-header" href="">Conta</NavDropdown.Item>
 								<NavDropdown.Divider />
-								<NavDropdown.Item id="item-photo-header" href="">Sair</NavDropdown.Item>
+								<button onClick={this.sair()}>
+									<NavDropdown.Item id="item-photo-header" href="/">Sair</NavDropdown.Item>
+								</button>
 							</NavDropdown>
 						</Nav>
 					</Navbar.Collapse>
