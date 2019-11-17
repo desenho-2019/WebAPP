@@ -10,17 +10,25 @@ export default class userRegister extends Component {
         super(props);
 
         this.state = {
-            nome: "",
-            genero: "",
-            nascimento: "",
-            celular: "",
-            foto: "",
+            user: {
+                email: "",
+                password: "",
+                confirmPassword: "",
+            },
+            first_name: "",
+            gender: "",
+            date_of_birth: "",
+            phone: "",
+            photo: "",
             facebook: "",
-            nacionalidade: "",
-            email: "",
-            password: "",
-            confirmPassword: ""
+            google: "",
+            nationality: "",
+            surname: "a",
         };
+    }
+
+    componentDidMount() {
+
     }
 
     validateForm() {
@@ -49,51 +57,86 @@ export default class userRegister extends Component {
     }
 
     submitHandler = e => {
-        e.preventDefault()
-        console.log(this.state)
-        axios.post('http://localhost:8990/user/create/', [this.state.email, this.state.password])
-            .then(response => {
-                console.log(response)
-            })
-            .catch(error => {
-                console.log(error)
-            })
+        /*
+        if (this.state.user !== this.state.confirmPassword) {
+            alert("Confirmação de senha incorreta");
+        }
+        else */{
+            e.preventDefault();
+            console.log(this.state)
+            axios.post('http://localhost:8990/person/create/', this.state)
+                .then(response => {
+                    console.log("PERSON CREATE", response)
+
+                    /*
+                    axios.get('http://localhost:8990/user/list/')
+                        .then(response => {
+                            console.log("USER LIST", response)
+                            const lista = response.data
+                            const mapa = lista.map(
+                                (user) => {
+                                    console.log(user.id, user.email);
+                                    if (user.email === this.state.email) {
+                                        this.setState({ user: user.id })
+                                    }
+                                }
+                            )
+                    */  /*
+                            axios.post(`http://localhost:8990/person/all/`, this.state)
+                                .then(res => {
+                                    console.log("PERSON", res)
+                                })
+                                .catch(error => {
+                                    console.log(error)
+                                })
+                               
+
+                        })
+                        .catch(error => {
+                            console.log(error)
+                        })
+                         */
+
+                })
+                .catch(error => {
+                    console.log(error)
+                })
+        }
     }
 
     render() {
 
-        const { email, password } = this.state;
         return (
             <Container>
-                <Form onSubmit={this.handleSubmit}>
+                <Form onSubmit={this.submitHandler}>
                     <h1>Cadastre-se</h1>
                     <hr />
                     <br></br>
+
                     <input
                         type="text"
                         placeholder="Nome completo"
-                        onChange={e => this.setState({ nome: e.target.value })}
+                        onChange={e => this.setState({ first_name: e.target.value })}
                         required
                     />
                     <select
                         type="select"
-                        onChange={e => this.setState({ genero: e.target.value })}
+                        onChange={e => this.setState({ gender: e.target.value })}
                         required>
                         <option>Selecione</option>
                         <option>Masculino</option>
                         <option>Feminino</option>
-                        <option>Outro</option>
                     </select>
                     <input
                         type="date"
                         placeholder="Data de nascimento"
-                        onChange={e => this.setState({ nascimento: e.target.value })}
+                        onChange={e => this.setState({ date_of_birth: e.target.value })}
                         required
                     />
                     <input
                         type="phone"
                         placeholder="Telefone"
-                        onChange={e => this.setState({ telefone: e.target.value })}
+                        onChange={e => this.setState({ phone: e.target.value })}
                         required
                     />
                     <input
@@ -106,31 +149,41 @@ export default class userRegister extends Component {
                         id="file"
                         type="file"
                         placeholder="Foto de perfil"
-                        onChange={e => this.setState({ foto: e.target.value })}
+                        onChange={e => this.setState({ photo: e.target.value })}
                     />
                     <input
                         type="text"
                         placeholder="Nacionalidade"
-                        onChange={e => this.setState({ nacionalidade: e.target.value })}
+                        onChange={e => this.setState({ nationality: e.target.value })}
                     />
                     <input
-                        name="email"
                         type="email"
                         placeholder="Endereço de e-mail"
-                        onChange={e => this.setState({ email: e.target.value })}
+                        onChange={e => this.setState({
+                            user: {
+                                email: e.target.value
+                            }
+                        })}
                         required
                     />
                     <input
-                        name="password"
                         type="password"
                         placeholder="Digite uma Senha"
-                        onChange={e => this.setState({ password: e.target.value })}
+                        onChange={e => this.setState({
+                            user: {
+                                password: e.target.value
+                            }
+                        })}
                         required
                     />
                     <input
                         type="password"
                         placeholder="Confirme sua Senha"
-                        onChange={e => this.setState({ confirmPassword: e.target.value })}
+                        onChange={e => this.setState({
+                            user: {
+                                confirmPassword: e.target.value
+                            }
+                        })}
                         required
                     />
                     <button type="submit">Cadastrar</button>

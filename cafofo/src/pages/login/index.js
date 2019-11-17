@@ -40,6 +40,10 @@ export default class Login extends Component {
             })
     }
 
+    loginUpdate() {
+        //window.location.reload(false);
+    }
+
     render() {
         const { email, password } = this.state;
         return (
@@ -59,12 +63,11 @@ export default class Login extends Component {
                         placeholder="Senha"
                         onChange={e => this.setState({ password: e.target.value })}
                     />
-                    <button type="submit">Entrar</button>
+                    <button type="submit" onClick={this.loginUpdate()}>Entrar</button>
                     <Link to="/esqueci-a-senha">Esqueceu sua senha?</Link>
 
                     <hr />
                     <div id="button-factory">
-                        {ButtonFactory.factoryMethod('email')}
                         {ButtonFactory.factoryMethod('facebook')}
                         {ButtonFactory.factoryMethod('google')}
                     </div>
