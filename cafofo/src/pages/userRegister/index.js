@@ -27,76 +27,18 @@ export default class userRegister extends Component {
         };
     }
 
-    componentDidMount() {
+    submitHandler = e => {
 
-    }
-
-    validateForm() {
-        return this.state.email.length > 0 && this.state.password.length > 0;
-    }
-
-    changeHandler = (e) => {
-        this.setState({ [e.target.name]: e.target.value })
-    }
-
-    handleConfirmPassword = (event) => {
-        if (event.target.value !== this.state.password) {
-            alert("Confirmação de senha incorreta");
-            this.setState({ confirmPassword: event.target.value })
-        }
-    }
-
-    handleSubmit = (event) => {
-        if (this.state.password !== this.state.confirmPassword) {
+        if (this.state.user.password !== this.state.user.confirmPassword) {
             alert("Confirmação de senha incorreta");
         }
         else {
-            event.preventDefault();
-            ;
-        }
-    }
-
-    submitHandler = e => {
-        /*
-        if (this.state.user !== this.state.confirmPassword) {
-            alert("Confirmação de senha incorreta");
-        }
-        else */{
             e.preventDefault();
             console.log(this.state)
             axios.post('http://localhost:8990/person/create/', this.state)
                 .then(response => {
                     console.log("PERSON CREATE", response)
-
-                    /*
-                    axios.get('http://localhost:8990/user/list/')
-                        .then(response => {
-                            console.log("USER LIST", response)
-                            const lista = response.data
-                            const mapa = lista.map(
-                                (user) => {
-                                    console.log(user.id, user.email);
-                                    if (user.email === this.state.email) {
-                                        this.setState({ user: user.id })
-                                    }
-                                }
-                            )
-                    */  /*
-                            axios.post(`http://localhost:8990/person/all/`, this.state)
-                                .then(res => {
-                                    console.log("PERSON", res)
-                                })
-                                .catch(error => {
-                                    console.log(error)
-                                })
-                               
-
-                        })
-                        .catch(error => {
-                            console.log(error)
-                        })
-                         */
-
+                    this.props.history.push('/login')
                 })
                 .catch(error => {
                     console.log(error)
@@ -124,8 +66,8 @@ export default class userRegister extends Component {
                         onChange={e => this.setState({ gender: e.target.value })}
                         required>
                         <option>Selecione</option>
-                        <option>Masculino</option>
-                        <option>Feminino</option>
+                        <option value='1'>Masculino</option>
+                        <option value='2'>Feminino</option>
                     </select>
                     <input
                         type="date"
@@ -161,7 +103,9 @@ export default class userRegister extends Component {
                         placeholder="Endereço de e-mail"
                         onChange={e => this.setState({
                             user: {
-                                email: e.target.value
+                                email: e.target.value,
+                                password: this.state.user.password,
+                                confirmPassword: this.state.user.confirmPassword
                             }
                         })}
                         required
@@ -171,7 +115,9 @@ export default class userRegister extends Component {
                         placeholder="Digite uma Senha"
                         onChange={e => this.setState({
                             user: {
-                                password: e.target.value
+                                email: this.state.user.email,
+                                password: e.target.value,
+                                confirmPassword: this.state.user.confirmPassword
                             }
                         })}
                         required
@@ -181,6 +127,8 @@ export default class userRegister extends Component {
                         placeholder="Confirme sua Senha"
                         onChange={e => this.setState({
                             user: {
+                                email: this.state.user.email,
+                                password: this.state.user.password,
                                 confirmPassword: e.target.value
                             }
                         })}
