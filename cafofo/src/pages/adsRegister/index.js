@@ -1,15 +1,7 @@
 import React, { Component } from 'react'
-import { makeStyles } from '@material-ui/core/styles';
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormControl from '@material-ui/core/FormControl';
-import FormLabel from '@material-ui/core/FormLabel';
-import api from '../../services/api'
 import axios from 'axios'
 import { Form, Container } from "./styles";
-
+import Header from "../../components/header/index";
 
 export default class AdsRegister extends Component {
     constructor(props) {
@@ -42,39 +34,6 @@ export default class AdsRegister extends Component {
     submitHandler = e => {
         e.preventDefault()
         console.log(this.state)
-        /*
-        fetch('https://5dc0cce395f4b90014ddc92c.mockapi.io/cafofos', {
-            method: 'POST',
-            //headers: {
-            //    Authorization: `Bearer ${localStorage.getItem('token')}`
-            //},
-            
-            body: JSON.stringify({
-                title: this.state.title,
-                description: this.state.description,
-                image: this.state.image,
-                price: this.state.price,
-                expenses: this.state.expenses,
-                commodities: this.state.commodities,
-                contact: this.state.contact,
-                terms: this.state.terms,
-                target_gender: this.state.target_gender,
-                status: true,
-                owner: this.state.status,
-                rooms: this.state.rooms,
-                bathrooms: this.state.bathrooms,
-                location: this.state.location,
-                guests: this.state.guests
-
-            })
-        }).then((res) => {
-            return res.json();
-        }).then(resJson => {
-            console.log("Piquinha", resJson)
-        }).catch(e => {
-            console.log("Pica 2", e)
-        })
-        */
         
         axios.post('https://5dc0cce395f4b90014ddc92c.mockapi.io/cafofos', this.state, {headers: {'Authorization': "bearer" + localStorage.getItem('token')}})
             .then(response => {
@@ -91,6 +50,8 @@ export default class AdsRegister extends Component {
             contact, terms, target_gender, status, owner, rooms, bathrooms,
             location, guests } = this.state;
         return (
+            <>
+            <Header/>
             <Container>
                 <Form onSubmit={this.submitHandler}>
                     <h1>VAMOS CRIAR SEU ANÚNCIO!</h1>
@@ -240,6 +201,7 @@ export default class AdsRegister extends Component {
 
                 </Form>
             </Container>
+            </>
         )
     }
 }

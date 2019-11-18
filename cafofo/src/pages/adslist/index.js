@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import api from '../../services/api';
 import { Link } from 'react-router-dom';
-import DateFilter from '../../components/day-picker';
 import Range from 'rc-slider';
 import { Multiselect } from "multiselect-react-dropdown";
 import 'rc-slider/assets/index.css';
+import Header from "../../components/header/index";
 
 import './styles.css';
 
-export default class Adslist extends React.Component {
+export default class Adslist extends Component {
 
     state = {
         cafofoAds: [],
@@ -45,13 +45,9 @@ export default class Adslist extends React.Component {
         const { cafofoAds } = this.state;
 
         return (
-
             <div>
+                <Header/>
                 <div className="filter-bar">
-                    <div className="filter-date">
-                        <label>Data</label><br />
-                        <DateFilter />
-                    </div>
                     <div className="filter-price">
                         <label>Preço</label><br />
                         <Range min={0} max={20} defaultValue={[3, 10]} tipFormatter={value => `${value}%`} />
@@ -60,8 +56,8 @@ export default class Adslist extends React.Component {
                         <label>Gênero</label><br />
                         <form>
                             <select id="genre" name="genre">
-                                <option value="masc">Masculino</option>
-                                <option value="fem">Feminino</option>
+                                <option value="masc">Apenas Masculino</option>
+                                <option value="fem">Apenas Feminino</option>
                                 <option value="indef">Indefinido</option>
                             </select>
                         </form>
@@ -75,6 +71,7 @@ export default class Adslist extends React.Component {
                         />
                     </div>
                 </div>
+                <hr />
                 <div className="container-ads wrap">
                     {cafofoAds.map(ads => (
                         //Para executar o .map é necessário adicionar uma key com valor único para cada elemento.
@@ -82,11 +79,13 @@ export default class Adslist extends React.Component {
                         <div key={ads.id}>
                             <Link to={`/cafofos/${ads.id}`}>
                                 <img src={ads.img} />
-                                <strong>{ads.title}</strong>
-                                <h2>{ads.addres}</h2>
-                                <h4>{ads.rooms} Quartos • {ads.bathrooms} Banheiros</h4>
-                                <h3>R$ {ads.price}</h3>
-                                {console.log(ads)}
+                                <div id="container-ads-text">
+                                    <strong>{ads.title}</strong>
+                                    <h2>{ads.location}</h2>
+                                    <h2>{ads.addres}</h2>
+                                    <h4>{ads.rooms} Quartos • {ads.bathrooms} Banheiros</h4>
+                                    <h3>R$ {ads.price}</h3>
+                                </div>
                             </Link>
                         </div>
                     ))}

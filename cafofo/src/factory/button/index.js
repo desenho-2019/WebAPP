@@ -1,6 +1,5 @@
 import React from 'react';
 import Button from '../../components/common/button'
-import { Link } from "react-router-dom"
 
 const fb = require('../../assets/fb.png');
 const email = require('../../assets/mail.png');
@@ -32,6 +31,10 @@ class ButtonFactory {
                     backColor={'red'}
                     type={"submit"}
 
+                />
+            default:
+                return <Button
+                    text={"Erro"}
                 />
         }
     }
