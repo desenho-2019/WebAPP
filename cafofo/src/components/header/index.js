@@ -8,7 +8,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 class Header extends Component {
 	state = {
 		myToken: null
-	}
+    }
+    
+    handleLogout = () => {
+        logout();
+        this.props.history.push("/");
+    };
 
 	render() {
 		if (isAuthenticated()) {
@@ -46,7 +51,7 @@ class Header extends Component {
 								<NavDropdown.Item id="item-photo-header" href="">Perfil</NavDropdown.Item>
 								<NavDropdown.Item id="item-photo-header" href="">Conta</NavDropdown.Item>
 								<NavDropdown.Divider />
-								{/* <NavDropdown.Item onClick={logout()} id="item-photo-header" href="/">Sair</NavDropdown.Item> */}
+								<NavDropdown.Item onClick={this.handleLogout} id="item-photo-header" href="/">Sair</NavDropdown.Item>
 							</NavDropdown>
 						</Nav>
 					</Navbar.Collapse>
