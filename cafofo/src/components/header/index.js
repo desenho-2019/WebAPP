@@ -6,9 +6,6 @@ import './styles.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Header extends Component {
-	state = {
-		myToken: null
-    }
     
     handleLogout = () => {
         logout();

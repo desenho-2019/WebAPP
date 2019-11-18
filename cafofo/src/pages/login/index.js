@@ -34,7 +34,7 @@ export default class Login extends Component {
         console.log(this.state)
         api.post('user/api/token/', this.state)
             .then(response => {
-                login(response.data.token);
+                login(response.data.access);
                 this.props.history.push("/");
             })
             .catch(error => {
