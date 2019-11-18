@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import api from '../../services/api';
 import CarouselSlider from './carousel'
+import Header from "../../components/header/index";
 
 import './styles.css';
 
@@ -35,6 +36,8 @@ export default class Adsinfo extends Component {
         const { adsDetail } = this.state;
 
         return (
+            <>
+            <Header/>
             <React.Fragment>
                 <CarouselSlider adsDetail={adsDetail} />
                 <div className='info-cafofo' key={adsDetail.id}>
@@ -145,6 +148,7 @@ export default class Adsinfo extends Component {
 
                 </div>
             </React.Fragment>
+            </>
         )
     }
 }

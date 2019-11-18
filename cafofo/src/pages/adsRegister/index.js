@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Form, Container } from "./styles";
-
+import Header from "../../components/header/index";
 
 export default class AdsRegister extends Component {
     constructor(props) {
@@ -50,6 +50,8 @@ export default class AdsRegister extends Component {
             contact, terms, target_gender, status, owner, rooms, bathrooms,
             location, guests } = this.state;
         return (
+            <>
+            <Header/>
             <Container>
                 <Form onSubmit={this.submitHandler}>
                     <h1>VAMOS CRIAR SEU ANÚNCIO!</h1>
@@ -199,6 +201,7 @@ export default class AdsRegister extends Component {
 
                 </Form>
             </Container>
+            </>
         )
     }
 }

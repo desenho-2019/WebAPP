@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { Link } from "react-router-dom";
+import { logout, isAuthenticated } from "../../services/auth";
 import './styles.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -9,13 +10,8 @@ class Header extends Component {
 		myToken: null
 	}
 
-	sair() {
-		localStorage.removeItem('token');
-	}
-	
-
 	render() {
-		if (localStorage.getItem('token')) {
+		if (isAuthenticated()) {
 			return (
 				<Navbar className="navbar navbar-light" bg="light" expand="lg">
 					<Navbar.Brand href="/" id="brand-icon">
@@ -50,9 +46,7 @@ class Header extends Component {
 								<NavDropdown.Item id="item-photo-header" href="">Perfil</NavDropdown.Item>
 								<NavDropdown.Item id="item-photo-header" href="">Conta</NavDropdown.Item>
 								<NavDropdown.Divider />
-								<button onClick={this.sair()}>
-									<NavDropdown.Item id="item-photo-header" href="/">Sair</NavDropdown.Item>
-								</button>
+								{/* <NavDropdown.Item onClick={logout()} id="item-photo-header" href="/">Sair</NavDropdown.Item> */}
 							</NavDropdown>
 						</Nav>
 					</Navbar.Collapse>

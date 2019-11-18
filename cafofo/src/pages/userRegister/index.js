@@ -57,8 +57,14 @@ export default class userRegister extends Component {
 
                     <input
                         type="text"
-                        placeholder="Nome completo"
+                        placeholder="Nome"
                         onChange={e => this.setState({ first_name: e.target.value })}
+                        required
+                    />
+                    <input
+                        type="text"
+                        placeholder="Sobrenome"
+                        onChange={e => this.setState({ surname: e.target.value })}
                         required
                     />
                     <select

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Range from 'rc-slider';
 import { Multiselect } from "multiselect-react-dropdown";
 import 'rc-slider/assets/index.css';
+import Header from "../../components/header/index";
 
 import './styles.css';
 
@@ -45,6 +46,7 @@ export default class Adslist extends Component {
 
         return (
             <div>
+                <Header/>
                 <div className="filter-bar">
                     <div className="filter-price">
                         <label>Preço</label><br />
