@@ -19,12 +19,13 @@ export default class AdsRegister extends Component {
             contact: '',
             terms: '',
             target_gender: '',
-            status: "active",
             owner: '',
             rooms: '',
             bathrooms: '',
             location: '',
-            guests: ''
+            guests: '',
+            area: 20,
+
         }
     }
 
@@ -40,6 +41,13 @@ export default class AdsRegister extends Component {
         api.post('/cards/mycards/', this.state)
             .then(response => {
                 console.log(response)
+                api.post(`vacancy/${response.data.pk}/leaf`, this.state)
+                    .then(res => {
+                        console.log(res)
+                    })
+                    .catch(error => {
+                        console.log(error)
+                    })
             })
             .catch(error => {
                 console.log(error)

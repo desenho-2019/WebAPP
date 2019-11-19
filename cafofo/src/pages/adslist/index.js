@@ -31,12 +31,15 @@ export default class Adslist extends Component {
         this.loadAds();
     };
 
-    loadAds = async () => {
-        const response = await api.get('/cafofos');
-
-        this.setState({ cafofoAds: response.data })
-        //.data.docs serve para ler as datas dentro das requisições de Docs 
-        // Mudar de acordo com o banco de dados, junto com o BASEURL em api.js
+    loadAds = () => {
+        api.get('cards/personal/')
+            .then(response => {
+                console.log("Teste", response)
+                this.setState({ cafofoAds: response.data })
+            })
+            .catch(e => {
+                console.log(e)
+            })
     };
 
     render() {
@@ -46,7 +49,7 @@ export default class Adslist extends Component {
 
         return (
             <div>
-                <Header/>
+                <Header />
                 <div className="filter-bar">
                     <div className="filter-price">
                         <label>Preço</label><br />
@@ -76,8 +79,8 @@ export default class Adslist extends Component {
                     {cafofoAds.map(ads => (
                         //Para executar o .map é necessário adicionar uma key com valor único para cada elemento.
                         //Nesse caso, usamos o ID
-                        <div key={ads.id}>
-                            <Link to={`/cafofos/${ads.id}`}>
+                        <div key={ads.pk}>
+                            <Link to={`/cafofos/${ads.pk}`}>
                                 <img src={ads.img} />
                                 <div id="container-ads-text">
                                     <strong>{ads.title}</strong>
