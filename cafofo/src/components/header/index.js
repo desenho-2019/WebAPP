@@ -80,7 +80,7 @@ class Header extends Component {
 						<Nav className="ml-auto">
 							<Nav.Link className="button-header" href="/login">LOGIN</Nav.Link>
 							<Nav.Link className="button-header" href="/cadastro">CADASTRO</Nav.Link>
-							<Nav.Link className="button-active" href="/cadastro" >ANUNCIE UM CAFOFO</Nav.Link>
+							<Nav.Link className="button-active" href="/login" >ANUNCIE UM CAFOFO</Nav.Link>
 						</Nav>
 					</Navbar.Collapse>
 				</Navbar>
