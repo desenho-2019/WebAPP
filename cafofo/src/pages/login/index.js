@@ -1,9 +1,13 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ButtonFactory from '../../factory/button/index';
+import axios from 'axios'
+import { login } from "../../services/auth";
+import api from "../../services/api";
+import Header from "../../components/header/index";
 
-import { Form, Container } from "./styles";
+import { Form, Container, div } from "./styles";
 
 export default class Login extends Component {
     constructor(props) {
@@ -25,38 +29,53 @@ export default class Login extends Component {
         });
     }
 
-    handleSubmit = event => {
-        event.preventDefault();
+    handleSubmit = async e => {
+        e.preventDefault();
+        console.log(this.state)
+        api.post('user/api/token/', this.state)
+            .then(response => {
+                login(response.data.access);
+                this.props.history.push("/");
+            })
+            .catch(error => {
+                console.log(error)
+                alert("E-mail ou senha inválidos!");
+            })
     }
 
     render() {
+        const { email, password } = this.state;
         return (
+            <div>
             <Container>
                 <Form onSubmit={this.handleSubmit}>
-                <h1>Entrar</h1>
-                <div id="button-factory">
-                    {ButtonFactory.factoryMethod('email')}
-                    {ButtonFactory.factoryMethod('facebook')}
-                    {ButtonFactory.factoryMethod('google')}
-                </div>
+                    <h1>Entrar</h1>
 
-                <input
-                    type="email"
-                    placeholder="Endereço de e-mail"
-                    onChange={e => this.setState({ email: e.target.value })}
-                />
-                <input
-                    type="password"
-                    placeholder="Senha"
-                    onChange={e => this.setState({ password: e.target.value })}
-                />
-                <button type="submit">Entrar</button>
-                <Link to="/esqueci-a-senha">Esqueceu sua senha?</Link>
+                    <input
+                        name="email"
+                        type="email"
+                        placeholder="Endereço de e-mail"
+                        onChange={e => this.setState({ email: e.target.value })}
+                    />
+                    <input
+                        name="password"
+                        type="password"
+                        placeholder="Senha"
+                        onChange={e => this.setState({ password: e.target.value })}
+                    />
+                    <button type="submit">Entrar</button>
+                    <Link to="/esqueci-a-senha">Esqueceu sua senha?</Link>
 
-                <hr />
-                <Link to="/cadastro">Cadastre-se</Link>
+                    <hr />
+                    <div id="button-factory">
+                        {ButtonFactory.factoryMethod('facebook')}
+                        {ButtonFactory.factoryMethod('google')}
+                    </div>
+                    <Link to="/cadastro">Cadastre-se</Link>
                 </Form>
             </Container>
+            <div className="gambiarra"></div>
+            </div>
         );
     }
 }

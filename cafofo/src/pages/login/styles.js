@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.div `
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  height: 100vh;
   background-image: linear-gradient(to right,#0099B0, #A7DBD7);
 `;
 
-export const Form = styled.form`
+export const Form = styled.form `
   width: 400px;
   background: #fff;
   padding: 30px;
@@ -18,6 +18,7 @@ export const Form = styled.form`
   flex-direction: column;
   align-items: center;
   border-radius: 4px;
+
   img {
     width: 100px;
     margin: 10px 0 40px;
@@ -58,7 +59,7 @@ export const Form = styled.form`
   hr {
     margin-top: 20px;
     margin-bottom: 20px;
-    border-color: #0099B0;
+    /* border-color: #0099B0; */
     border-bottom: 1px solid #cdcdcd;
     width: 100%;
   }
