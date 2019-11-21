@@ -4,6 +4,7 @@ import { Form, Container } from "./styles";
 import Header from "../../components/header/index";
 import api from "../../services/api"
 import { getToken, TOKEN_KEY } from "../../services/auth"
+import InputMask from 'react-input-mask';
 
 export default class AdsRegister extends Component {
     constructor(props) {
@@ -80,7 +81,7 @@ export default class AdsRegister extends Component {
                                 <input
                                     name="title"
                                     type="text"
-                                    placeholder="Ex.: Quarto 20m² no Condomínio... "
+                                    placeholder="Quarto 20m² no Condomínio... "
                                     value={title}
                                     onChange={this.changeHandler}
                                     required
@@ -89,18 +90,20 @@ export default class AdsRegister extends Component {
                                 <span>Insira a descrição do seu anúncio.</span>
                                 <textarea
                                     name="description"
-                                    placeholder="Ex.: Quarto localizado no condomínio X, quadra X, totalmente decorado e mobiliado...  "
+                                    placeholder="Quarto totalmente decorado e mobiliado...  "
                                     value={description}
                                     onChange={this.changeHandler}
                                     required
                                 />
                                 <h5>CEP:<h6>*</h6></h5>
                                 <span>Insira o CEP do seu cafofo.</span>
-                                <input
+                                <InputMask
                                     name="location"
                                     value={location}
                                     onChange={this.changeHandler}
-                                    placeholder="Ex.: 00.000-000"
+                                    placeholder="00000-000"
+                                    mask="99999-999"
+                                    maskChar={null}
                                     required
 
                                 />
@@ -120,20 +123,23 @@ export default class AdsRegister extends Component {
 
                                 <h5>Valor do Aluguel:<h6>*</h6></h5>
                                 <span>Insira o valor final de aluguel a ser pago.</span>
-                                <input
+                                <InputMask
                                     name="price"
                                     type="number"
-                                    placeholder="Ex.: R$ 750,00"
+                                    maskChar={null}
+                                    // placeholder="750,00"
                                     value={price}
                                     onChange={this.changeHandler}
                                     required
                                 />
                                 <h5>Telefone para contato:<h6>*</h6></h5>
                                 <span>Insira o telefone para contato do seu anúncio.</span>
-                                <input
+                                <InputMask
                                     name="contact"
                                     type="tel"
-                                    placeholder="Ex.: (XX) 9 XXXX-XXXX"
+                                    mask="(99)99999-9999"
+                                    maskChar={null}
+                                    placeholder="(00)00000-0000"
                                     value={contact}
                                     onChange={this.changeHandler}
                                     required
@@ -144,7 +150,7 @@ export default class AdsRegister extends Component {
                                     name="guests"
                                     value={guests}
                                     onChange={this.changeHandler}
-                                    placeholder="Ex.: 2 Vagas"
+                                    // placeholder="2"
 
                                 />
                             </div>
@@ -154,7 +160,7 @@ export default class AdsRegister extends Component {
                                 <span>Insira as despesas inclusas no valor de aluguel definido.</span>
                                 <textarea
                                     name="expenses"
-                                    placeholder="Ex.: Água, Luz, Internet, ..."
+                                    placeholder="Água, Luz, Internet..."
                                     value={expenses}
                                     onChange={this.changeHandler}
                                     required
@@ -163,7 +169,7 @@ export default class AdsRegister extends Component {
                                 <span>Insira as comodidades inclusas no valor de aluguel definido.</span>
                                 <textarea
                                     name="commodities"
-                                    placeholder="Ex.: Cozinha, Academia, TV, Piscina, Ar-condicionado, Estacionamento, ..."
+                                    placeholder="Cozinha, Academia, TV, Piscina, Ar-condicionado..."
                                     value={commodities}
                                     onChange={this.changeHandler}
                                     required
@@ -172,7 +178,7 @@ export default class AdsRegister extends Component {
                                 <span>Insira as políticas de convivência do seu cafofo.</span>
                                 <textarea
                                     name="terms"
-                                    placeholder="Ex.: Proibido fumar, Permitida a entrada de animais, Silêncio após as 22h, ..."
+                                    placeholder="Proibido fumar, Permitida a entrada de animais, Silêncio após as 22h, ..."
                                     value={terms}
                                     onChange={this.changeHandler}
                                     required
@@ -203,7 +209,7 @@ export default class AdsRegister extends Component {
                                     name="rooms"
                                     value={rooms}
                                     onChange={this.changeHandler}
-                                    placeholder="Ex.: 5 quartos"
+                                    // placeholder="Ex.: 5 quartos"
                                 />
                                 <h5>Banheiros:</h5>
                                 <span>Insira a quantidade de banheiros disponíveis no seu cafofo.</span>
@@ -211,7 +217,7 @@ export default class AdsRegister extends Component {
                                     name="bathrooms"
                                     value={bathrooms}
                                     onChange={this.changeHandler}
-                                    placeholder="Ex.: 3 banheiros"
+                                    // placeholder="Ex.: 3 banheiros"
                                 />
 
                             </div>

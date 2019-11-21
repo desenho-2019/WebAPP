@@ -34,7 +34,6 @@ class Header extends Component {
 						/>
 					</Navbar.Brand>
 					<Navbar.Toggle aria-controls="basic-navbar-nav" />
-					<input className="header-search-bar" type="text" name="search" placeholder="Pesquisar cafofos..."></input>
 					<Navbar.Collapse id="justify-content-end">
 						<Nav className="ml-auto">
 							<Nav.Link className="button-header" href="/">SALVOS</Nav.Link>
