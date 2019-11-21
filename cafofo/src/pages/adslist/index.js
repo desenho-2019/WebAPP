@@ -87,7 +87,7 @@ export default class Adslist extends Component {
                                     <h2>{ads.location}</h2>
                                     <h2>{ads.addres}</h2>
                                     <h4>{ads.rooms} Quartos • {ads.bathrooms} Banheiros</h4>
-                                    <h3>R$ {ads.price}</h3>
+                                    {ads.vacancies.map(prices => <h3>R${prices.price}</h3>)}
                                 </div>
                             </Link>
                         </div>

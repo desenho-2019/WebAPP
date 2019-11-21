@@ -19,7 +19,7 @@ export default class AdsRegister extends Component {
             contact: '',
             terms: '',
             target_gender: '',
-            owner: '',
+            owner: 'eu',
             rooms: '',
             bathrooms: '',
             location: '',
@@ -204,6 +204,14 @@ export default class AdsRegister extends Component {
                                     value={rooms}
                                     onChange={this.changeHandler}
                                     placeholder="Ex.: 5 quartos"
+                                />
+                                <h5>Banheiros:</h5>
+                                <span>Insira a quantidade de banheiros disponíveis no seu cafofo.</span>
+                                <input
+                                    name="bathrooms"
+                                    value={bathrooms}
+                                    onChange={this.changeHandler}
+                                    placeholder="Ex.: 3 banheiros"
                                 />
 
                             </div>
