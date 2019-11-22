@@ -17,7 +17,9 @@ export default class Main extends Component {
                                 <p className="line-1 anim-typewriter">ENCONTRE O CAFOFO IDEAL PARA DIVIDIR!</p>
                                 <input id="location-insert" type="text" name="search" placeholder="Onde você deseja morar?">
                                 </input>
-                                <button className="button" id="search-button"><i class="fa fa-search"></i></button>
+                                <Link to="/cafofos">
+                                    <button className="button" id="search-button"><i class="fa fa-search"></i></button>
+                                </Link>
                             </div>
                             <Link to="/cafofos">
                                 <button className="button" id="list-button"><i>IR PARA CAFOFOS</i></button>

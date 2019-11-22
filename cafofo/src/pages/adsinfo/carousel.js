@@ -9,18 +9,14 @@ export default class CarouselSlider extends Component {
 
         const photos = [
             {
-                src: this.props.adsDetail.image,
+                src: this.props.img,
                 key: '1'
-            },
-            {
-                src: this.props.adsDetail.img,
-                key: '2'
             }
         ]
 
         return (
             <div>
-                {console.log(this.props.adsDetail)}
+                {console.log(this.props.img)}
                 <UncontrolledCarousel items={photos} />
             </div>
         )

@@ -2,29 +2,39 @@ import React, { Component } from 'react';
 import api from '../../services/api';
 import CarouselSlider from './carousel'
 import Header from "../../components/header/index";
+import { images } from "./images";
 
 import './styles.css';
 
 export default class Adsinfo extends Component {
     state = {
         adsDetail: [],
-        pk: null
+        pk1: null,
+        vacancy: [],
     };
 
     async componentDidMount() {
-
         const pk = this.props.match.params;
+        this.setState({pk1: pk.id});
         api.get(`cards/personal/${pk.id}/`)
             .then(response => {
                 console.log("Teste", response)
                 this.setState({ adsDetail: response.data });
+                console.log("Toma no cu", this.state.adsDetail.vacancies[0].price);
+                api.get(`vacancy/all/${pk.id}/`)
+                .then(response => {
+                    this.setState({ vacancy: response.data});
+                    console.log("Vaca", this.state.vacancy);
+                })
+                .catch(e => {
+                    console.log(e)
+                })
             })
             .catch(e => {
                 console.log(e)
             })
-
-
     }
+
 
     isAvailable = (status) => {
         if (status === true) {
@@ -40,12 +50,14 @@ export default class Adsinfo extends Component {
 
     render() {
         const { adsDetail } = this.state;
+        const { vacancy } = this.state;
+        const { pk1 } = this.state;
 
         return (
             <>
                 <Header />
                 <React.Fragment>
-                    <CarouselSlider adsDetail={adsDetail} />
+                    <img src={images[pk1]} />
                     <div className='info-cafofo' key={adsDetail.pk}>
                         <div className='status-cafofo'>
                             {this.isAvailable(adsDetail.status)}
@@ -72,7 +84,7 @@ export default class Adsinfo extends Component {
                             </div>
                             <div className="price-cafofo">
                                 <h3>ALUGUEL DE</h3>
-                                <h1>R$ {adsDetail.price}</h1>
+                                <h1>R${parseFloat(vacancy.price).toFixed(2)}</h1>
                             </div>
                         </div>
                         <div className="third-line">
@@ -80,8 +92,8 @@ export default class Adsinfo extends Component {
                                 <i className="fas fa-mars fa-3x" id="male"></i>
                                 <i className="fas fa-venus fa-3x" id="female"></i>
                                 <h5>{adsDetail.guests} HOSPEDES</h5>
-                                <h5>{adsDetail.rooms} QUARTOS</h5>
-                                <h5>{adsDetail.bathrooms} BANHEIRO</h5>
+                                <h5>{adsDetail.rooms}1 QUARTO</h5>
+                                <h5>{adsDetail.bathrooms}1 BANHEIRO</h5>
                             </div>
                             <div className="share-buttons">
                                 <a href={`https://api.whatsapp.com/send?phone=${adsDetail.contact}`}>

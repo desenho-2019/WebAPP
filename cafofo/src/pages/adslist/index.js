@@ -5,6 +5,8 @@ import Range from 'rc-slider';
 import { Multiselect } from "multiselect-react-dropdown";
 import 'rc-slider/assets/index.css';
 import Header from "../../components/header/index";
+import { images } from "../adsinfo/images";
+
 
 import './styles.css';
 
@@ -18,12 +20,6 @@ export default class Adslist extends Component {
             { key: "Mobiliado", id: 3 },
             { key: "Ferro de passar", id: 4 },
         ],
-        //   selectedValues: [
-        //     { key: "Piscina", id: 1 },
-        //     { key: "Máquina de lavar", id: 2 },
-        //     { key: "Mobiliado", id: 3 },
-        //     { key: "Ferro de passar", id: 4 },
-        //   ]
     }
 
     //Executa a ação quando o elemento já é renderizado na tela
@@ -41,6 +37,10 @@ export default class Adslist extends Component {
                 console.log(e)
             })
     };
+
+    getRandom(e) {
+        return (Math.floor(Math.random() * e + 1))
+    }
 
     render() {
 
@@ -81,12 +81,12 @@ export default class Adslist extends Component {
                         //Nesse caso, usamos o ID
                         <div key={ads.pk}>
                             <Link to={`/cafofos/${ads.pk}`}>
-                                <img src={ads.img} />
+                                <img src={images[ads.pk]} />
                                 <div id="container-ads-text">
                                     <strong>{ads.title}</strong>
                                     <h2>{ads.location}</h2>
                                     <h2>{ads.addres}</h2>
-                                    <h4>{ads.rooms} Quartos • {ads.bathrooms} Banheiros</h4>
+                                    <h4>{ads.rooms} {this.getRandom(2)} Quartos • {this.getRandom(2)} Banheiro</h4>
                                     {ads.vacancies.map(prices => <h3>R${prices.price}</h3>)}
                                 </div>
                             </Link>
@@ -94,7 +94,6 @@ export default class Adslist extends Component {
                     ))}
                 </div>
             </div>
-
         )
     }
 }

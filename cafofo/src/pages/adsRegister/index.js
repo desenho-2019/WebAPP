@@ -16,13 +16,13 @@ export default class AdsRegister extends Component {
             image: '',
             price: '',
             expenses: '',
-            commodities: '',
+            comodities: '',
             contact: '',
             terms: '',
             target_gender: '',
             owner: 'eu',
-            rooms: '',
-            bathrooms: '',
+            rooms: 1,
+            bathrooms: 1,
             location: '',
             guests: '',
             area: 20,
@@ -168,7 +168,7 @@ export default class AdsRegister extends Component {
                                 <h5>Comodidades:<h6>*</h6></h5>
                                 <span>Insira as comodidades inclusas no valor de aluguel definido.</span>
                                 <textarea
-                                    name="commodities"
+                                    name="comodities"
                                     placeholder="Cozinha, Academia, TV, Piscina, Ar-condicionado..."
                                     value={commodities}
                                     onChange={this.changeHandler}
